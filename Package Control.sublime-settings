@@ -1,15 +1,35 @@
 {
-  "installed_packages":
-  [
-    "A File Icon",
-    "AdvancedNewFile",
-    "All Autocomplete",
-    "Babel",
-    "Emmet",
-    "ERB Snippets",
-    "Git",
-    "GitGutter",
-    "Package Control",
-    "SCSS"
-  ]
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"AdvancedNewFile",
+		"All Autocomplete",
+		"Anaconda",
+		"Babel",
+		"CSS Completions",
+		"CSS Extended Completions",
+		"Djaneiro",
+		"Dracula Color Scheme",
+		"Emmet",
+		"ERB Snippets",
+		"Git",
+		"GitGutter",
+		"JavaScript Completions",
+		"Package Control",
+		"PackageResourceViewer",
+		"ProductiveSnippetsERB",
+		"RuboCop",
+		"Ruby Completions",
+		"Sass",
+		"SCSS",
+		"SublimeLinter",
+		"SublimeLinter-contrib-reek",
+		"SublimeLinter-rubocop",
+		"Vuejs Complete Package",
+		"Vuejs Snippets"
+	]
 }

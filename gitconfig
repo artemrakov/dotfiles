@@ -12,6 +12,7 @@
 [core]
   pager = less -FRSX
 	editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
+	excludesFile = /Users/artemrakov/.gitignore
 
 [alias]
   co = checkout
@@ -49,3 +50,8 @@
 [user]
 	email = scoff1k@gmail.com
 	name = Artem Rakov
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

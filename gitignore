@@ -1,5 +1,4 @@
 # Mac OSX Finder hidden files
 .DS_Store
+.idea
 
-# Figaro gem
-config/application.yml
