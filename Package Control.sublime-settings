@@ -24,11 +24,13 @@
 		"ProductiveSnippetsERB",
 		"RuboCop",
 		"Ruby Completions",
+		"Ruby Slim",
 		"Sass",
 		"SCSS",
 		"SublimeLinter",
 		"SublimeLinter-contrib-reek",
 		"SublimeLinter-rubocop",
+		"TestRSpec",
 		"Vuejs Complete Package",
 		"Vuejs Snippets"
 	]
