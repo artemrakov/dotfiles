@@ -15,6 +15,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'bling/vim-airline' "Status bar customization
 Plugin '907th/vim-auto-save'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'chemzqm/vim-jsx-improve'
 
 Plugin 'nanotech/jellybeans.vim'
 
