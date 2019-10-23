@@ -15,8 +15,11 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'bling/vim-airline' "Status bar customization
 Plugin '907th/vim-auto-save'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'chemzqm/vim-jsx-improve'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -62,23 +65,28 @@ set tm=500
 " Remap leader key
 let mapleader = "\<Space>"
 
-nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>ed :sp $MYVIMRC<cr>
 
 " Source (reload) your vimrc. Type space, s, o in sequence to trigger
 nmap <leader>so :source $MYVIMRC<cr>
 
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+nmap <C-m> :NERDTreeFind<CR>
+
 "timeout length for leader key
 :set timeoutlen=2000
 
-" Get to NORMAL mode with 'jj'
-:imap jj <Esc>
-
-" Map Ctrl-s to save file in normal and insert modes
-nmap <C-s> :w<CR>
-imap <C-s> <esc>:w<CR>
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
 
 "0 jumps to beginning of line
 nmap 0 ^
+
+vmap <leader>y :w! /tmp/.vim/.vbuf<CR>
+nmap <leader>y :.w! /tmp/.vim/.vbuf<CR>
+nmap <leader>p :r /tmp/.vim/.vbuf<CR>
 
 filetype indent on "activates indenting for files
 set autoindent " auto indenting
@@ -95,4 +103,3 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_switch_buffer = 0
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
-
