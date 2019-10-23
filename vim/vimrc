@@ -87,7 +87,7 @@ augroup END
 runtime macros/matchit.vim
 " ================
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
 imap jj <esc>
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
@@ -166,6 +166,16 @@ map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
+
+" Edit .vimrc
+map <leader>vl :vsp $MYVIMRC<CR>
+map <leader>vr :source $MYVIMRC<CR>
+
+""" Plugins Keymaps
+
+nmap <C-m> :NERDTreeFind<CR>
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
