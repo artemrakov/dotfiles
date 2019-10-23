@@ -29,6 +29,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'vim-sciripts/vim-auto-save'
 Plugin 'chemzqm/vim-jsx-improve'
+Plugin 'scrooloose/nerdtree'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
