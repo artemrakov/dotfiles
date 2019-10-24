@@ -16,9 +16,10 @@
 
 [alias]
   co = checkout
-  st = status -sb
+  st = status
   br = branch
   ci = commit
+  p = push
   fo = fetch origin
   d = !git --no-pager diff
   dt  = difftool

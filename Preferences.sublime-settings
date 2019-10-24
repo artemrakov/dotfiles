@@ -29,11 +29,22 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"A File Icon",
 		"Anaconda",
 		"CSS Completions",
+		"CSS Extended Completions",
 		"Djaneiro",
 		"ERB_Snippets",
-		"Vintage"
+		"JavaScript Completions",
+		"PackageResourceViewer",
+		"ProductiveSnippetsERB",
+		"RuboCop",
+		"Ruby Completions",
+		"Sass",
+		"SublimeLinter-contrib-reek",
+		"Vintage",
+		"Vuejs Complete Package",
+		"Vuejs Snippets"
 	],
 	"remember_open_files": false,
 	"rulers":
