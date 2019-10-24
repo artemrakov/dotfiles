@@ -31,11 +31,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
-export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
- for a in $(git var -l | sed -nE 's/^alias\.([^=]*)=.*/\1/p') ; do
-         if ! command -v g$a >/dev/null 2>&1 ; then
-                     alias g$a="git $a"
-                           fi
-                             done
-         fi
- done
+
+for a in $(git var -l | sed -nE 's/^alias\.([^=]*)=.*/\1/p') ; do
+    if ! command -v g$a >/dev/null 2>&1 ; then
+        alias g$a="git $a"
+    fi
+done

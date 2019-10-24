@@ -2,17 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"A File Icon",
-		"CSS Extended Completions",
-		"JavaScript Completions",
-		"PackageResourceViewer",
-		"ProductiveSnippetsERB",
-		"RuboCop",
-		"Ruby Completions",
-		"Sass",
-		"SublimeLinter-contrib-reek",
-		"Vuejs Complete Package",
-		"Vuejs Snippets"
 	],
 	"installed_packages":
 	[
