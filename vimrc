@@ -183,7 +183,7 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 " Quickfix management
-map <Space><Space> :ccl<cr>
+" map <Space><Space> :ccl<cr>
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500		" keep 500 lines of command line history
