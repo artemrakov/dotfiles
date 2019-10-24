@@ -12,7 +12,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My bundles
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
@@ -27,19 +26,11 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
-Plugin 'vim-sciripts/vim-auto-save'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'scrooloose/nerdtree'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
-
-" Elm
-Plugin 'ElmCast/elm-vim'
-" let g:elm_format_autosave = 1
-
-let g:elm_setup_keybindings = 0 " Get out of my bindings
-let g:elm_format_autosave = 0
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
@@ -90,7 +81,6 @@ runtime macros/matchit.vim
 
 let mapleader = "\<Space>"
 
-imap jj <esc>
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
@@ -191,8 +181,8 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set showmatch
 set nowrap
-set backupdir=~/.tmp
-set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+" set backupdir=~/.tmp
+" set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 set autoread
 set wmh=0
 set viminfo+=!
