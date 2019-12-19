@@ -149,7 +149,7 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
-map <C-h> :nohl<cr>
+map <C-n> :nohl<cr>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 
