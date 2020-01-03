@@ -205,6 +205,7 @@ set lazyredraw " Don't redraw screen when running macros.
 colorscheme jellybeans
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:use_default_key_map = 0 "disable vim thesaurus default keymap
 
 " Set the tag file search order
 set tags=./tags;
