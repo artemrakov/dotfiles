@@ -28,6 +28,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/vim-auto-save'
+Plugin 'benshuailyu/online-thesaurus-vim'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
@@ -149,7 +151,7 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
-map <C-h> :nohl<cr>
+map <C-n> :nohl<cr>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 
@@ -166,7 +168,7 @@ map <leader>vr :source $MYVIMRC<CR>
 
 nmap <C-m> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-
+nmap <Leader>dc :call thesaurusPy2Vim#Thesaurus_LookCurrentWord()<CR>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -203,6 +205,7 @@ set lazyredraw " Don't redraw screen when running macros.
 colorscheme jellybeans
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:use_default_key_map = 0 "disable vim thesaurus default keymap
 
 " Set the tag file search order
 set tags=./tags;
