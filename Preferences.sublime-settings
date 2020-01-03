@@ -24,7 +24,7 @@
 	[
 		"no_italic"
 	],
-	"font_size": 10,
+	"font_size": 14,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
@@ -33,7 +33,8 @@
 		"CSS Completions",
 		"Djaneiro",
 		"ERB_Snippets",
-		"Vintage"
+		"Vintage",
+		"zzz A File Icon zzz"
 	],
 	"remember_open_files": false,
 	"rulers":
