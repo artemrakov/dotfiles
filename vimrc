@@ -28,6 +28,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/vim-auto-save'
+Plugin 'benshuailyu/online-thesaurus-vim'
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
@@ -166,7 +168,7 @@ map <leader>vr :source $MYVIMRC<CR>
 
 nmap <C-m> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-
+nmap <Leader>dc :call thesaurusPy2Vim#Thesaurus_LookCurrentWord()<CR>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
