@@ -38,7 +38,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'nanotech/jellybeans.vim'
 
 " --------- Snippets -------------------------
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
