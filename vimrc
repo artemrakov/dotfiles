@@ -29,6 +29,8 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plugin 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 Plugin 'benshuailyu/online-thesaurus-vim'
 
 " Clojure
