@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful plugins for Rails development with Sublime Text
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search z)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -18,6 +18,8 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
+# export PATH=/usr/local/share/python:$PATH
+
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
@@ -29,7 +31,8 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

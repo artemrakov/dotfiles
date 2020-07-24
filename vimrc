@@ -15,21 +15,27 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-bundler', { 'for': 'ruby' }
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rails', { 'for': 'ruby' }
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
-Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plugin 'c-brenn/phoenix.vim', { 'for': 'elixir' }
+Plugin 'slim-template/vim-slim.git'
 Plugin 'benshuailyu/online-thesaurus-vim'
+
+" Javascript
+Plugin 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plugin 'maxmellon/vim-jsx-pretty', { 'for': 'javascript' }
 
 " Clojure
 Plugin 'tpope/vim-fireplace'
@@ -38,7 +44,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'nanotech/jellybeans.vim'
 
 " --------- Snippets -------------------------
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -165,10 +171,10 @@ map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
 
 """ Plugins Keymaps
-
 nmap <C-m> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 nmap <Leader>dc :call thesaurusPy2Vim#Thesaurus_LookCurrentWord()<CR>
+
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -204,9 +210,8 @@ set lazyredraw " Don't redraw screen when running macros.
 
 colorscheme jellybeans
 
+let g:use_default_key_map = 0
 let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:use_default_key_map = 0 "disable vim thesaurus default keymap
-
 " Set the tag file search order
 set tags=./tags;
 
