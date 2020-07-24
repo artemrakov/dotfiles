@@ -32,6 +32,7 @@ Plugin 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plugin 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 Plugin 'slim-template/vim-slim.git'
 Plugin 'benshuailyu/online-thesaurus-vim'
+Plugin 'neovimhaskell/haskell-vim'
 
 " Javascript
 Plugin 'pangloss/vim-javascript', { 'for': 'javascript' }
