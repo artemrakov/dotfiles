@@ -36,4 +36,15 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+# added by travis gem
+[ ! -s /Users/artemrakov/.travis/travis.sh ] || source /Users/artemrakov/.travis/travis.sh
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/Users/artemrakov/yandex-cloud/path.bash.inc' ]; then source '/Users/artemrakov/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artemrakov/yandex-cloud/completion.zsh.inc'; fi
+
