@@ -48,3 +48,4 @@ if [ -f '/Users/artemrakov/yandex-cloud/path.bash.inc' ]; then source '/Users/ar
 # The next line enables shell command completion for yc.
 if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artemrakov/yandex-cloud/completion.zsh.inc'; fi
 
+export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
