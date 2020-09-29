@@ -1,6 +1,6 @@
 {
 	"always_show_minimap_viewport": false,
-	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"detect_indentation": true,
 	"draw_white_space": true,
 	"ensure_newline_at_eof_on_save": true,
