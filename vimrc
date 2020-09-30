@@ -11,7 +11,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" My bundles
 Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
@@ -23,6 +22,7 @@ Plugin 'tpope/vim-rails', { 'for': 'ruby' }
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-test/vim-test'
 Plugin 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-pug'
@@ -31,8 +31,17 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plugin 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 Plugin 'slim-template/vim-slim.git'
-Plugin 'benshuailyu/online-thesaurus-vim'
+
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+
+Plugin 'hashivim/vim-terraform', { 'for': 'terraform' }
+
 Plugin 'neovimhaskell/haskell-vim'
+
+Plugin 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 
 " Javascript
 Plugin 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -90,7 +99,6 @@ runtime macros/matchit.vim
 
 let mapleader = "\<Space>"
 
-map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
@@ -98,57 +106,24 @@ vmap <Leader>bed "td?describe<cr>obed<tab><esc>"tpkdd/end<cr>o<esc>:nohl<cr>
 map <Leader>cc :!cucumber --drb %<CR>
 map <Leader>cu :Tabularize /\|<CR>
 map <Leader>co mmggVG"*y`m
-map <Leader>cc :Rjcollection client/
-map <Leader>cj :Rjspec client/
-map <Leader>cm :Rjmodel client/
 map <Leader>cs :call SearchForCallSitesCursor()<CR>
-map <Leader>ct :Rtemplate client/
-map <Leader>cv :Rjview client/
-map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
-map <Leader>dr :e ~/Dropbox<cr>
-map <Leader>dj :e ~/Dropbox/notes/debugging_journal.txt<cr>
-map <Leader>ec :e ~/code/
-map <Leader>gw :cd %:p:h<cr>:!git add . && git commit -m 'WIP' && git push<cr>
-map <Leader>gl :e Gemfile.lock<cr>
 map <Leader>f :call OpenFactoryFile()<CR>
 map <Leader>fix :cnoremap % %<CR>
 map <Leader>fa :sp test/factories.rb<CR>
 map <Leader>i mmgg=G`m
 map <Leader>l :Eval<cr>
-map <Leader>m :Rmodel
 map <Leader>mf mmgqap`m:w<cr>
-map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
-map <Leader>nt :e! ~/Dropbox/docs/trailmix/todo.md<cr>
-map <Leader>o :w<cr>:call RunNearestSpec()<CR>
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
-map <Leader>pn :sp ~/Dropbox/work/tuple/project-notes.md<cr>
-map <Leader>q :copen<cr><cr>
 map <Leader>ra :%s/
 map <Leader>rs :vsp <C-r>#<cr><C-w>w
 map <Leader>rt q:?!ruby<cr><cr>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
 map <Leader>sc :sp db/schema.rb<cr>
 map <Leader>sg :sp<cr>:grep<space>
-map <Leader>sm :RSmodel
-map <Leader>sp yss<p>
-map <Leader>sn :UltiSnipsEdit<CR>
-map <Leader>so :so %<cr>
 map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
 map <Leader>ss :!spring stop<cr>
-map <Leader>st :!ruby -Itest % -n "//"<left><left>
-map <Leader>su :RSunittest
-map <Leader>sv :RSview
-map <Leader>t :w<cr>:call RunCurrentSpecFile()<CR>
-map <Leader>y :!rspec --drb %<cr>
-map <Leader>u :Runittest<cr>
-map <Leader>vc :Vcontroller<cr>
-map <Leader>vf :Vfunctional<cr>
 map <Leader>vg :vsp<cr>:grep
-map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vu :AV<CR>
-map <Leader>vm :Vmodel<cr>
-map <Leader>vv :Vview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 
@@ -157,6 +132,19 @@ map <Leader>x :exec getline(".")<cr>
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+
+" Testing things
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>o :GFiles .<CR>
+nnoremap <leader>fc :Commits<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fa :Ag<CR>
 
 map <C-n> :nohl<cr>
 map <C-t> <esc>:tabnew<CR>
@@ -304,15 +292,6 @@ let g:ctrlp_use_caching = 1
 " Don't jump to a different place just because the file is already open, dingus
 let g:ctrlp_switch_buffer = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Test-running stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:rspec_command = "!clear && bin/rspec {spec}"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
 
