@@ -97,6 +97,9 @@ augroup END
 runtime macros/matchit.vim
 " ================
 
+set background=dark
+set t_Co=256
+
 let mapleader = "\<Space>"
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
