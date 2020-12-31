@@ -4,8 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 #   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Useful plugins for Rails development with Sublime Text
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search z)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search z docker docker-compose)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -18,7 +17,9 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-# export PATH=/usr/local/share/python:$PATH
+# Load pyenv (To manage your Python versions)
+export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
@@ -34,7 +35,7 @@ export LC_ALL=en_US.UTF-8
 export NVM_DIR=~/.nvm
 export BUNDLER_EDITOR="vim"
 source $(brew --prefix nvm)/nvm.sh
-export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
@@ -48,3 +49,5 @@ if [ -f '/Users/artemrakov/yandex-cloud/path.bash.inc' ]; then source '/Users/ar
 # The next line enables shell command completion for yc.
 if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artemrakov/yandex-cloud/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
+
+source "./docker-machine-wrapper.sh"
