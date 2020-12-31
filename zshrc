@@ -50,4 +50,4 @@ if [ -f '/Users/artemrakov/yandex-cloud/path.bash.inc' ]; then source '/Users/ar
 if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artemrakov/yandex-cloud/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
-source "./docker-machine-wrapper.sh"
+source "${HOME}/code/artemrakov/dotfiles/docker-machine-wrapper.sh"
