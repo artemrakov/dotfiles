@@ -49,3 +49,5 @@ if [ -f '/Users/artemrakov/yandex-cloud/path.bash.inc' ]; then source '/Users/ar
 # The next line enables shell command completion for yc.
 if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/artemrakov/yandex-cloud/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
