@@ -411,6 +411,8 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+set clipboard=unnamed
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -437,6 +439,13 @@ omap af <Plug>(coc-funcobj-a)
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
+
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! QA qall
+command! E e
+command! W w
+command! Wq wq
 
 "" Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
