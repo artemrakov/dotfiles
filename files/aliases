@@ -6,3 +6,6 @@ alias r="rails"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)

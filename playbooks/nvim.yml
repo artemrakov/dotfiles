@@ -1,0 +1,13 @@
+---
+
+- hosts: localhost
+
+  tasks:
+    - file:
+        path: ~/.config
+        state: directory
+
+    - file:
+        src: ./files/vimrc
+        dest: ~/.config/nvim
+        state: link

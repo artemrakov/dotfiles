@@ -1,0 +1,36 @@
+---
+
+- hosts: localhost
+  tags: setup
+
+
+  tasks:
+    - file:
+      path: ~/code
+      state: present
+
+    - file:
+      path: ~/code/artemrakov
+      state: present
+
+    - git:
+      repo: https://github.com/ArtemRakov/dotfiles.git
+      dest: ~/code/artemrakov
+
+    - script:
+      cmd: files/install.sh
+
+    - file:
+      path: ~/.config
+      state: directory
+
+    - file:
+      src: files/vimrc
+      dest: ~/.config/nvim
+      state: link
+
+    - file:
+      src: files/coc-settings.json
+      dest: ~/.config/nvim
+      state: link
+
