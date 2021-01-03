@@ -5,32 +5,39 @@
 
 
   tasks:
-    - file:
-      path: ~/code
-      state: present
+    - name: Creat dir code
+      file:
+        path: ~/code
+        state: directory
 
-    - file:
-      path: ~/code/artemrakov
-      state: present
+    - name: Create dir with my folder
+      file:
+        path: ~/code/artemrakov
+        state: directory
 
-    - git:
-      repo: https://github.com/ArtemRakov/dotfiles.git
-      dest: ~/code/artemrakov
+    - name: Copy my files
+      git:
+        repo: https://github.com/ArtemRakov/dotfiles.git
+        dest: ~/code/artemrakov
 
-    - script:
-      cmd: files/install.sh
+    - name: Run installation script
+      script:
+        command: files/install.sh
 
-    - file:
-      path: ~/.config
-      state: directory
+    - name: Create .config for neovim
+      file:
+        path: ~/.config
+        state: directory
 
-    - file:
-      src: files/vimrc
-      dest: ~/.config/nvim
-      state: link
+    - name: Link vimrc to neovim
+      file:
+        src: files/vimrc
+        dest: ~/.config/nvim
+        state: link
 
-    - file:
-      src: files/coc-settings.json
-      dest: ~/.config/nvim
-      state: link
+    - name: Link coc settings
+      file:
+        src: files/coc-settings.json
+        dest: ~/.config/nvim
+        state: link
 
