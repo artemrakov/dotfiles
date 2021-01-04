@@ -2,8 +2,11 @@ macos-prepare:
 	brew install the_silver_searcher fzf bat htop fd ncdu tldr httpie
 
 deps-pip:
-	# pip2 install --upgrade pynvim
+	pip2 install --upgrade pynvim
 	pip3 install --upgrade pynvim
+
+install-asdf:
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 
 install-ruby:
 	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -16,7 +19,7 @@ install-node:
 	nvm install 14.15.0
 
 deps-gem:
-	gem install rake neovim mdl haml-lint sqlint rubocop rubocop-rspec solargraph fastri slim_lint brakeman rails_best_practices reek rspec pry pry-byebug colored http bunlder
+	gem install rake neovim mdl haml-lint sqlint rubocop rubocop-rspec solargraph fastri slim_lint brakeman rails_best_practices reek rspec pry pry-byebug colored http 
 
 deps-npm:
 	npm install -g neovim

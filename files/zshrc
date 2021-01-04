@@ -12,14 +12,6 @@ export HOMEBREW_NO_ANALYTICS=1
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
-# Load rbenv if installed
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
-
-# Load pyenv (To manage your Python versions)
-export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
-
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
@@ -31,7 +23,6 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export NVM_DIR=~/.nvm
 export BUNDLER_EDITOR="vim"
 export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
@@ -46,3 +37,6 @@ if [ -f '/Users/artemrakov/yandex-cloud/completion.zsh.inc' ]; then source '/Use
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+ $HOME/.asdf/asdf.sh
+

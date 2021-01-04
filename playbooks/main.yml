@@ -1,5 +1,3 @@
 ---
-# - import_playbook: basic-packages.yml
-# - import_playbook: linking-files.yml
-- import_playbook: languages.yml
-- import_playbook: addons.yml
+- import_playbook: basic-packages.yml
+- import_playbook: linking-files.yml
