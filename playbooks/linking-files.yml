@@ -22,6 +22,7 @@
 
     - name: Run installation script
       shell: 'cd ~/code/artemrakov/dotfiles/files && zsh install.sh'
+      ignore_errors: true
 
     - name: Create .config for neovim
       file:
