@@ -38,4 +38,7 @@ fi
 cd "$CURRENT_DIR"
 
 setopt nocasematch
+
 zsh ~/.zshrc
+
+echo "👌  Carry on with git setup!"

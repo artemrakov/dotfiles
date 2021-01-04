@@ -21,11 +21,16 @@
         dest: ~/code/artemrakov/dotfiles
 
     - name: Run installation script
-      command: zsh ~/code/artemrakov/dotfiles/files/install.sh
+      command: cd ~/code/artemrakov/dotfiles/files && zsh install.sh
 
     - name: Create .config for neovim
       file:
         path: ~/.config
+        state: directory
+
+    - name: Create nvim for neovim
+      file:
+        path: ~/.config/nvim
         state: directory
 
     - name: Link vimrc to neovim
