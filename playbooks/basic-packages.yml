@@ -41,6 +41,5 @@
     - role: gantsign.oh-my-zsh
       users:
         - username: ubuntu
-      notify: Reboot
 
 
