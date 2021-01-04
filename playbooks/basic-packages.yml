@@ -1,6 +1,7 @@
 ---
 
-- hosts: localhost
+- hosts: all
+  become: true
 
   tasks:
     - name: Install git
@@ -9,20 +10,9 @@
         state: present
         update_cache: true
 
-    - name: Install github gh apt key
-      apt_key:
-        id: C99B11DEB97541F0
-        keyserver: keyserver.ubuntu.com
-        state: present
-
-    - name: Add gh Repository
-      apt_repository:
-        repo: https://cli.github.com/packages
-        state: present
-
     - name: Install required system packages
       apt: name={{ item }} state=present update_cache=yes
-      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common', 'zsh', 'curl', 'vim', 'imagemagic', 'jq', 'build-essential', 'tklib', 'zlib1g-dev', 'libssl-dev', 'libffi-dev', 'libxml2', 'libxml2-dev', 'libxslt1-dev', 'libreadline-dev', 'tree', 'ncdu', 'htop', 'tig', 'hub', 'gh', 'neovim']
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common', 'zsh', 'curl', 'vim', 'jq', 'build-essential', 'tklib', 'zlib1g-dev', 'libssl-dev', 'libffi-dev', 'libxml2', 'libxml2-dev', 'libxslt1-dev', 'libreadline-dev', 'tree', 'ncdu', 'htop', 'tig', 'neovim', 'imagemagick']
 
     - name: Add Docker GPG apt key
       apt_key:
@@ -41,4 +31,9 @@
     - name: Ubuntu inotify
       become: true
       command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+  roles:
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: vagrant
 

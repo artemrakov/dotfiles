@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "appserver" do |app|
-    app.vm.box = "ubuntu/xenial64"
+    app.vm.box = "ubuntu/bionic64"
     app.vm.hostname = "appserver"
     app.vm.network :private_network, ip: "10.10.10.20"
 

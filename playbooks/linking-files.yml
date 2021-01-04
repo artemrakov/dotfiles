@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: all
   tags: setup
 
 
@@ -18,11 +18,10 @@
     - name: Copy my files
       git:
         repo: https://github.com/ArtemRakov/dotfiles.git
-        dest: ~/code/artemrakov
+        dest: ~/code/artemrakov/dotfiles
 
     - name: Run installation script
-      script:
-        command: files/install.sh
+      command: zsh ~/code/artemrakov/dotfiles/files/install.sh
 
     - name: Create .config for neovim
       file:
@@ -31,13 +30,13 @@
 
     - name: Link vimrc to neovim
       file:
-        src: files/vimrc
-        dest: ~/.config/nvim
+        src: ~/code/artemrakov/dotfiles/files/init.vim
+        dest: ~/.config/nvim/init.vim
         state: link
 
     - name: Link coc settings
       file:
-        src: files/coc-settings.json
-        dest: ~/.config/nvim
+        src: ~/code/artemrakov/dotfiles/files/coc-settings.json
+        dest: ~/.config/nvim/coc-settings.json
         state: link
 
