@@ -32,8 +32,15 @@
       become: true
       command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
+  handlers:
+    - name: Reboot
+      reboot:
+        reboot_timeout: 3600
+
   roles:
     - role: gantsign.oh-my-zsh
       users:
         - username: vagrant
+      notify: Reboot
+
 
