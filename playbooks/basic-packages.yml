@@ -40,7 +40,7 @@
   roles:
     - role: gantsign.oh-my-zsh
       users:
-        - username: vagrant
+        - username: ubuntu
       notify: Reboot
 
 
