@@ -21,7 +21,7 @@
         dest: ~/code/artemrakov/dotfiles
 
     - name: Run installation script
-      command: cd ~/code/artemrakov/dotfiles/files && zsh install.sh
+      shell: 'cd ~/code/artemrakov/dotfiles/files && zsh install.sh'
 
     - name: Create .config for neovim
       file:
