@@ -23,26 +23,3 @@
     - name: Run installation script
       shell: 'cd ~/code/artemrakov/dotfiles/files && zsh install.sh'
       ignore_errors: true
-
-    - name: Create .config for neovim
-      file:
-        path: ~/.config
-        state: directory
-
-    - name: Create nvim for neovim
-      file:
-        path: ~/.config/nvim
-        state: directory
-
-    - name: Link vimrc to neovim
-      file:
-        src: ~/code/artemrakov/dotfiles/files/init.vim
-        dest: ~/.config/nvim/init.vim
-        state: link
-
-    - name: Link coc settings
-      file:
-        src: ~/code/artemrakov/dotfiles/files/coc-settings.json
-        dest: ~/.config/nvim/coc-settings.json
-        state: link
-

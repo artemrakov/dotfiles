@@ -19,7 +19,7 @@ install-node:
 	asdf global nodejs 15.5.0
 
 install-python:
-	asdf install python latest
+	asdf install python 3.9.1
 	asdf install python 2.7.13
 	asdf global python 3.9.1 2.7.13
 
