@@ -28,10 +28,10 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/vim-auto-save'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'slim-template/vim-slim', { 'for': ['slim', 'slime'] }
 
 " Clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
@@ -114,6 +114,10 @@ let mapleader = "\<Space>"
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 map <Leader>ss :!spring stop<cr>
 map <Leader>w <C-w>w
+map <Leader>i mmgg=G`m
+
+set background=dark
+set t_Co=256
 
 let test#strategy = "vimterminal"
 
