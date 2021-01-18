@@ -9,6 +9,7 @@ install-asdf:
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 
 install-ruby:
+	asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 	asdf install ruby 2.7.2
 	asdf global ruby 2.7.2
 
