@@ -15,11 +15,11 @@ install-ruby:
 
 install-node:
 	asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-	bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 	asdf install nodejs 15.5.0
 	asdf global nodejs 15.5.0
 
 install-python:
+	asdf plugin-add python
 	asdf install python 3.9.1
 	asdf install python 2.7.13
 	asdf global python 3.9.1 2.7.13
