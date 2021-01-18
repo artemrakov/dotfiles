@@ -254,6 +254,8 @@ nmap <C-m> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
 nnoremap <leader>b :Buffers<CR>
+map <Leader>i mmgg=G`m
+
 
 """ Plugin Settings
 

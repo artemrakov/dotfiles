@@ -5,16 +5,6 @@
 
 
   tasks:
-    - name: Creat dir code
-      file:
-        path: ~/code
-        state: directory
-
-    - name: Copy my files
-      git:
-        repo: git@github.com:ArtemRakov/dotfiles.git
-        dest: ~/code/dotfiles
-
     - name: Run installation script
       shell: 'cd ~/code/dotfiles/files && zsh install.sh'
       ignore_errors: true
@@ -30,7 +20,12 @@
         dest: ~/.config/nvim/init.vim
         state: link
 
-    - name: Install vim plug
+    - name: Autoload nvim
+      file: path=~/.local/share/nvim/site/autoload state=directory recurse=Yes
+      with_items:
+        - autoload
+
+    - name: Load vim plug
       get_url:
         force: yes
         dest: ~/.local/share/nvim/site/autoload/plug.vim
