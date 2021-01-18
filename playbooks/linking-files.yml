@@ -10,16 +10,28 @@
         path: ~/code
         state: directory
 
-    - name: Create dir with my folder
-      file:
-        path: ~/code/artemrakov
-        state: directory
-
     - name: Copy my files
       git:
-        repo: https://github.com/ArtemRakov/dotfiles.git
-        dest: ~/code/artemrakov/dotfiles
+        repo: git@github.com:ArtemRakov/dotfiles.git
+        dest: ~/code/dotfiles
 
     - name: Run installation script
-      shell: 'cd ~/code/artemrakov/dotfiles/files && zsh install.sh'
+      shell: 'cd ~/code/dotfiles/files && zsh install.sh'
       ignore_errors: true
+
+    - name: Create nvim dir
+      file:
+        dest: ~/.config/nvim
+        state: directory
+
+    - name: link vimrc
+      file:
+        src: "~/code/dotfiles/files/vimrc"
+        dest: ~/.config/nvim/init.vim
+        state: link
+
+    - name: Install vim plug
+      get_url:
+        force: yes
+        dest: ~/.local/share/nvim/site/autoload/plug.vim
+        url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"

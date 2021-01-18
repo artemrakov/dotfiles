@@ -29,6 +29,13 @@
       apt: name={{ item }} state=present update_cache=yes
       loop: ['docker-ce', 'docker-ce-cli', 'containerd.io']
 
+    - name: Install docker-compose
+      remote_user: ubuntu
+      get_url:
+        url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
+      dest: /usr/local/bin/docker-compose
+      mode: 'u+x,g+x'
+
     - name: Ubuntu inotify
       become: true
       command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
@@ -40,6 +47,6 @@
   roles:
     - role: gantsign.oh-my-zsh
       users:
-        - username: ubuntu
+        - username: root
 
 
