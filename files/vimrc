@@ -24,7 +24,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-lug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-repeat'
@@ -493,7 +493,7 @@ nnoremap <silent> <space>l :<C-u>CocList location<CR>
 
 let g:coc_filetype_map = {
         \ 'eruby.yaml': 'yaml',
-        \ }g
+        \ }
 
 " Nerdtree configuration
 " https://github.com/preservim/nerdtree
