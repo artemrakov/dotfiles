@@ -1,43 +1,75 @@
-setglobal nocompatible
-setglobal pastetoggle=<F2>
+let mapleader = "\<Space>"
 
-set ttyfast
-set lazyredraw
-
-" let g:python_host_skip_check=1
-" let g:loaded_python3_provider=1
-
+" auto install vim-plug and plugins
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:ale_disable_lsp = 1
+" https://github.com/chrisbra/matchit
+:packadd! matchit
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'liuchengxu/vista.vim'
+"" MUST BE
+" Plug 'tpope/vim-sensible'
+" git support
+" Plug 'tpope/vim-fugitive'
 Plug 'honza/vim-snippets'
+" advanced welcome screen
 Plug 'mhinz/vim-startify'
 " Plug 'neomake/neomake'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" Plug 'lxhillwind/leader-clipboard'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+lug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'nanotech/jellybeans.vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-projectionist'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+Plug 'tpope/vim-endwise'
+Plug 'rlue/vim-barbaric'
+"Plug 'Raimondi/delimitMate'
+
+"" PROBABLY USEFULL
+" multi cursor
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'AndrewRadev/splitjoin.vim'
+" database access
+Plug 'tpope/vim-dadbod'
+"Plug 'cohama/lexima.vim'
+Plug 'jpalardy/vim-slime', {'branch': 'main'}
+Plug 'editorconfig/editorconfig-vim'
+Plug 'puremourning/vimspector'
+Plug 'wellle/targets.vim'
+
+""LANGAUGE SPECIFIC
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'tpope/vim-rails'
+" Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-haml'
+" Plug 'slim-template/vim-slim'
+
+" Plug 'lxhillwind/leader-clipboard'
 " Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'chr4/nginx.vim'
+" Plug 'hashivim/vim-terraform'
+" Plug 'chr4/nginx.vim'
 Plug 'janko-m/vim-test'
 " Plug 'jlanzarotta/bufexplorer'
-Plug 'lepture/vim-jinja', { 'for': 'jinja' }
+Plug 'lepture/vim-jinja'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'tpope/vim-surround'
-Plug 'isobit/vim-caddyfile'
+" Plug 'isobit/vim-caddyfile'
 
 " Targets.vim comes with five kinds for text objects:
 " Pair text objects
@@ -45,44 +77,29 @@ Plug 'isobit/vim-caddyfile'
 " Separator text objects
 " Argument text objects
 " Tag text objects
-Plug 'wellle/targets.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'nanotech/jellybeans.vim'
-Plug 'dyng/ctrlsf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-projectionist'
-Plug 'othree/html5.vim'
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-Plug 'slim-template/vim-slim', { 'for': ['slim', 'slime'] }
-Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
+" Plug 'othree/html5.vim'
+" Plug 'digitaltoad/vim-pug'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'vim-erlang/vim-erlang-runtime'
+" Plug 'vim-erlang/vim-erlang-compiler'
 " Auto close parentheses and repeat by dot dot dot...
-Plug 'cohama/lexima.vim'
+Plug 'c-brenn/phoenix.vim'
 
-Plug 'jpalardy/vim-slime'
+" Plug 'jwalton512/vim-blade'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
 
-Plug 'jwalton512/vim-blade', { 'for': 'php' }
-Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-Plug 'noahfrederick/vim-composer', { 'for': 'php' }
-Plug 'noahfrederick/vim-laravel', { 'for': 'php' }
-
-Plug 'joonty/vdebug', { 'on': 'VdebugStart' }
-Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
+" Plug 'rhysd/vim-clang-format'
 " Plug 'tpope/vim-ragtag'
 
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'neovimhaskell/haskell-vim'
 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'maxmellon/vim-jsx-pretty', { 'for': 'javascript' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'udalov/kotlin-vim'
+
 " Plug 'moll/vim-node'
 " Plug 'mattn/emmet-vim', { 'for': 'html' }
 
@@ -90,43 +107,37 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 " Plug 'xolox/vim-easytags'
 " Plug 'Valloric/MatchTagAlways'
 
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
-Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 " Plug 'michaeljsmith/vim-indent-object'
 
 " Clojure
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
-Plug 'tpope/vim-classpath', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
+" Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+" Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
+" Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
 
-Plug 'kovisoft/slimv', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+" Plug 'kovisoft/slimv', { 'for': ['clojure', 'scheme', 'racket'] }
+" Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
-" Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-" Plug 'henrik/vim-yaml-flattener'
-
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-
-Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'chrisbra/csv.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 " \ 'coc-docker', https://github.com/neoclide/coc.nvim/pull/2756
+" \ 'coc-tabnine',
+" https://github.com/phpactor/coc-phpactor use when become popular
 let g:coc_global_extensions = [
-      \ 'coc-tabnine',
       \ 'coc-cspell-dicts',
+      \ 'coc-markdownlint',
       \ 'coc-spell-checker',
       \ 'coc-tsserver',
       \ 'coc-prettier',
       \ 'coc-html',
       \ 'coc-lists',
+      \ 'coc-xml',
       \ 'coc-phpls',
       \ 'coc-sh',
       \ 'coc-css',
@@ -143,24 +154,25 @@ let g:coc_global_extensions = [
       \ 'coc-yaml',
       \ 'coc-highlight',
       \ 'coc-snippets',
-      \ 'coc-docker',
       \ 'coc-diagnostic',
       \ 'coc-yank',
+      \ 'coc-git',
       \]
 
 call plug#end()
 
-" set rtp+=/root/.fzf
-
-let mapleader = "\<Space>"
+syntax on
+filetype plugin on
 
 " https://github.com/vim/vim/blob/master/runtime/doc/russian.txt
 " Enable hotkeys for Russian layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+silent! colorscheme jellybeans
+
 " set visualbell
-set completeopt=noinsert,menuone,noselect
-set complete+=kspell
+" set completeopt=noinsert,menuone,noselect
+" set complete+=kspell
 
 if has('mouse')
   set mouse=a
@@ -175,62 +187,66 @@ endif
 " endif
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw
-set ttyfast
+" set lazyredraw
+" set ttyfast
 
-set shortmess+=c
+" set shortmess+=c
 
-set cursorline
-set hidden
-set nofoldenable
-set wrap
-set linebreak
+" set cursorline
+" set hidden
+" set nofoldenable
+" set wrap
+" set linebreak
 set number
 set hlsearch
 set ignorecase
-set smartcase
+" set smartcase
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowritebackup
-set nowb
-set noswapfile
+" set nobackup
+" set nowritebackup
+" set nowb
+" set noswapfile
 
-set showcmd       " display incomplete commands
-set autowrite     " Automatically :write before running commands
+" set showcmd       " display incomplete commands
+" set autowrite     " Automatically :write before running commands
 
 " Use one space, not two, after punctuation.
 " set nojoinspaces
 
 " set softtabstop=4
+" new line indent: use spaces instead of tab
+" set smarttab
+" set smartindent
 set expandtab
-" set noexpandtab
-set softtabstop=2
-set shiftwidth=2
 
-set updatetime=300
-set splitbelow
-set cmdheight=2
-" TODO: replace with "number" when new neovim will be released
+set softtabstop=2
+set tabstop=2
+" new line indent: how many spaces for one tab
+set shiftwidth=2
+"set tabstop=2
+" current line indent: how many spaces for one tab
+"set softtabstop=2
+
+" set updatetime=300
+" set splitbelow
+" set cmdheight=2
+" " TODO: replace with "number" when new neovim will be released
 set signcolumn=yes
 set scrolloff=3
 
-silent! colorscheme jellybeans
-
-" ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo')
-  silent !mkdir /tmp/.vim/backups > /dev/null 2>&1
-  set undodir=/tmp/.vim/backups
-  set undofile
-endif
+"silent !mkdir /tmp/.vim/backups > /dev/null 2>&1
+set undodir=/tmp/.vim/backups
+set undofile
 
 """ Basics Keymaps
 
 " Turn off linewise keys. Normally, the `j' and `k' keys move the cursor down one entire line. with line wrapping on, this can cause the cursor to actually skip a few lines on the screen because it's moving from line N to line N+1 in the file. I want this to act more visually -- I want `down' to mean the next line on the screen
-nmap j gj
-nmap k gk
+" nmap j gj
+" nmap k gk
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -238,71 +254,73 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+vmap "y "*y
+nmap "y "*y
+nmap "Y "*Y
+nmap "p "*p
+nmap "P "*P
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
+noremap <Leader>s :update<CR>
 
 " Edit .vimrc
 map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
 
-""" Plugins Keymaps
+vmap gcc <plug>NERDCommenterToggle
+nmap gcc <plug>NERDCommenterToggle
 
-nmap <C-m> :NERDTreeFind<CR>
-nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
 
-nnoremap <leader>b :Buffers<CR>
-map <Leader>i mmgg=G`m
+" https://github.com/tpope/vim-endwise/issues/11
+execute "inoremap {<CR> {<CR>}<ESC>O"
 
-
-""" Plugin Settings
+autocmd FileType scss setl iskeyword+=@-@
 
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toc_autofit = 1
 
-let g:vista_default_executive = 'coc'
-
 let g:slime_target = "neovim"
 
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
-let test#strategy = "neovim"
-
-" coc-yank
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+" nmap     <C-F>f <Plug>CtrlSFPrompt
+" vmap     <C-F>f <Plug>CtrlSFVwordPath
+" vmap     <C-F>F <Plug>CtrlSFVwordExec
+" nmap     <C-F>n <Plug>CtrlSFCwordPath
+" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap <C-F>o :CtrlSFOpen<CR>
+" nnoremap <C-F>t :CtrlSFToggle<CR>
+" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 let g:vim_markdown_folding_disabled = 1
 
 " format the entire file
-nnoremap ff :normal! gg=G``<CR>
+" nnoremap ff :normal! gg=G``<CR>
 
 " set text wrapping toggles
-nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+" nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>o :GFiles .<CR>
-nnoremap <leader>fc :Commits<CR>
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fa :Ag<CR>
-
-let NERDTreeIgnore = ['\.pyc$', '\.retry$']
+" nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 nmap <silent> // :nohlsearch<CR>
-noremap <leader>hl :set hlsearch! hlsearch?<CR>
+" noremap <leader>hl :set hlsearch! hlsearch?<CR>
 
+" Allows you to enter sudo pass and save the file
+" " when you forgot to open your file with sudo
+" cmap w!! %!sudo tee > /dev/null %
+
+nmap     <leader>fr <Plug>CtrlSFPrompt
+
+"set spell spelllang=en_us,ru_ru
+
+" Ale configuration
+"
 " let g:airline#extensions#ale#enabled = 1
+let g:ale_disable_lsp = 1
+
 let g:ale_sign_column_always = 1
 let g:ale_linters_explicit = 1
 let g:ale_sign_highlight_linenrs = 1
@@ -312,61 +330,36 @@ let g:ale_linters = {
 \   'ruby': ['brakeman', 'reek'],
 \}
 
-" Allows you to enter sudo pass and save the file
-" " when you forgot to open your file with sudo
-cmap w!! %!sudo tee > /dev/null %
+" Coc configuration
+" https://github.com/neoclide/coc.nvim
 
-" nnoremap <silent> <bs> <C-w><Left>
+" TextEdit might fail if hidden is not set.
+set hidden
 
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+" Give more space for displaying messages.
+set cmdheight=2
 
-" if filereadable(expand("~/.vimrc.after"))
-"   source ~/.vimrc.after
-" endif
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
-" https://thoughtbot.com/blog/vim-spell-checking
-" augroup markdownSpell
-"     autocmd!
-"     autocmd FileType markdown setlocal spell
-"     autocmd BufRead,BufNewFile *.md setlocal spell
-" augroup END
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
-augroup FileTypeTetect
-  autocmd!
-  " au BufEnter *.markdown,*.mkd,*.md setl wrap tw=79
-  " au BufEnter *.json setl ft=javascript
-  " au BufEnter *.coffee setl sw=2 expandtab
-  " au BufEnter *.py setl ts=4 sw=4 sts=4
-  " autocmd BufEnter *.php setlocal ts=4 sw=4 sts=4
-  filetype plugin indent on
-  autocmd BufEnter *.java setlocal ts=4 sw=4 sts=4
-  autocmd BufEnter Makefile setlocal ts=4 sw=4 noexpandtab
-  autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-  autocmd BufNewFile,BufRead *.slime setlocal filetype=slim
-  autocmd BufNewFile,BufRead *.jsh setlocal filetype=java
-  autocmd FileType scss setl iskeyword+=@-@
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
-  " au BufEnter *.js setl ts=2 sw=2 sts=2
-  " au BufEnter *.html setl ts=4 sw=4 sts=4
-  " au BufEnter *.tex setl wrap tw=79 fo=tcqor
-  " au BufEnter *.[ch] setl cindent
-  " au BufEnter *.[ch]pp setl cindent
-  " au BufEnter Makefile setl ts=4 sts=4 sw=4 noet list
-  " au BufEnter *.es6 setf javascript
-augroup END
-
-"""" COC
-
-" Use tab for trigger completion with characters ahead and navigate.
+" Use tab for trigger completion with characters ahead and naviate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
@@ -374,6 +367,9 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -386,12 +382,18 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
+inoremap <silent> <CR> <C-r>=<SID>coc_confirm()<CR>
+function! s:coc_confirm() abort
+  if pumvisible()
+    return coc#_select_confirm()
+  else
+    return "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  endif
+endfunction
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -422,9 +424,10 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
+" Formatting selected code (prettier)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>ff :<C-u>Format<cr>
 
 augroup mygroup
   autocmd!
@@ -482,26 +485,56 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings for CoCList
-" Show all diagnostics.
-" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" " Manage extensions.
-" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" " Show commands.
-" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" " Do default action for next item.
-" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" " Do default action for previous item.
-" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" " Resume latest coc list.
-" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>d  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>o :<C-u>CocList outline<CR>
+nnoremap <silent> <space>l :<C-u>CocList location<CR>
 
-vmap <leader>y "*y
-nmap <leader>y "*y
-nmap <leader>p "*p
+let g:coc_filetype_map = {
+        \ 'eruby.yaml': 'yaml',
+        \ }g
+
+" Nerdtree configuration
+" https://github.com/preservim/nerdtree
+
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+nnoremap <C-m> :NERDTreeFind<CR>
+
+let NERDTreeIgnore = ['\.pyc$', '\.retry$']
+
+" coc-yank
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+"command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Fzf configuration
+" https://github.com/junegunn/fzf.vim
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
+
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+nnoremap <silent><nowait> <leader>b :Buffers<CR>
+nnoremap <silent><nowait> <leader>p :GFiles --cached --others --exclude-standard<CR>
+nnoremap <silent><nowait> <leader>g :GGrep<CR>
+
+
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+let test#strategy = "neovim"
