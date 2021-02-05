@@ -86,8 +86,8 @@ Plug 'lepture/vim-jinja'
 Plug 'c-brenn/phoenix.vim'
 
 " Plug 'jwalton512/vim-blade'
-Plug 'noahfrederick/vim-composer'
-Plug 'noahfrederick/vim-laravel'
+" Plug 'noahfrederick/vim-composer'
+" Plug 'noahfrederick/vim-laravel'
 
 " Plug 'rhysd/vim-clang-format'
 " Plug 'tpope/vim-ragtag'
@@ -138,7 +138,6 @@ let g:coc_global_extensions = [
       \ 'coc-html',
       \ 'coc-lists',
       \ 'coc-xml',
-      \ 'coc-phpls',
       \ 'coc-sh',
       \ 'coc-css',
       \ 'coc-stylelint',
@@ -510,6 +509,8 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Fzf configuration
 " https://github.com/junegunn/fzf.vim
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
