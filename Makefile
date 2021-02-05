@@ -24,6 +24,10 @@ install-python:
 	asdf install python 2.7.13
 	asdf global python 3.9.1 2.7.13
 
+update-vim-plugins:
+	nvim --headless +PlugUpdate +qall
+	nvim --headless +CocUpdate +qall
+
 deps-gem:
 	gem install rake neovim mdl haml-lint sqlint rubocop rubocop-rspec solargraph fastri slim_lint brakeman rails_best_practices reek rspec pry pry-byebug colored http
 
