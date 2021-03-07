@@ -94,7 +94,7 @@ Plug 'c-brenn/phoenix.vim'
 
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'eagletmt/ghcmod-vim'
-" Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -120,8 +120,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
 
-" Plug 'kovisoft/slimv', { 'for': ['clojure', 'scheme', 'racket'] }
-" Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+Plug 'kovisoft/slimv', { 'for': ['clojure', 'scheme', 'racket'] }
+Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 " Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
