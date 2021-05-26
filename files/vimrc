@@ -531,11 +531,10 @@ nnoremap <silent><nowait> <leader>b :Buffers<CR>
 nnoremap <silent><nowait> <leader>p :GFiles --cached --others --exclude-standard<CR>
 nnoremap <silent><nowait> <leader>g :GGrep<CR>
 
-
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-
 let test#strategy = "neovim"
+
+nmap <silent> <leader>t :TestNearest<CR>
+" nmap <silent> t<C-f> :TestFile<CR>
+" nmap <silent> t<C-s> :TestSuite<CR>
+" nmap <silent> t<C-l> :TestLast<CR>
+" nmap <silent> t<C-g> :TestVisit<CR>
