@@ -6,4 +6,4 @@ alias r="rails"
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
-alias awsume='source /Users/arakov/.asdf/installs/python/3.6.12/bin/awsume'
+alias awsume='source /Users/artemrakov/.asdf/installs/python/3.6.12/bin/awsume'
