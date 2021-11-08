@@ -50,7 +50,7 @@
 [branch "master"]
   mergeoptions = --no-edit
 [user]
-	email = arakov@fastmail.com
+	email = artem@rakov.me
 	name = Artem Rakov
 [filter "lfs"]
 	required = true
