@@ -6,7 +6,9 @@ ZSH_THEME="robbyrussell"
 
 plugins=(fzf git vi-mode gcloud kubectl kube-ps1 gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search z docker docker-compose asdf doctl helm)
 
+
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export PATH=/opt/homebrew/bin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
