@@ -5,6 +5,9 @@ install:
 playbook:
 	ansible-playbook -i inventory.yml playbooks/main.yml -v
 
+linking-files:
+	ansible-playbook -i inventory.yml playbooks/linking-files.yml -v
+
 macos-prepare:
 	brew install the_silver_searcher fzf bat htop fd ncdu tldr httpie
 

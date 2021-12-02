@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: all
   tasks:
     - name: Run installation script
       shell: 'cd ~/code/dotfiles/files && zsh install.sh'

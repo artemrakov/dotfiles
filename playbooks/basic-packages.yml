@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: all
   become: true
   tasks:
     - name: Install git
@@ -15,7 +15,7 @@
 
 
 - name: Install zsh
-  hosts: localhost
+  hosts: all
   become: yes
 
   roles:
@@ -24,21 +24,19 @@
         - username: root
 
 - name: install and setup docker
-  hosts: localhost
+  hosts: all
   become: yes
 
   roles:
     - name: geerlingguy.docker
       vars:
         docker_install_compose: true
-        docker_users:
-          - "{{ user }}"
     - name: markosamuli.asdf
       vars:
         asdf_init_shell: true
 
 - name: Install asdf and plugins
-  hosts: localhost
+  hosts: all
   roles:
     - role: markosamuli.asdf
       vars:
@@ -54,12 +52,13 @@
           - name: "python"
             versions: ["3.10.0", "2.7.18"]
 
-
-- name: Ubuntu inotify
-  hosts: localhost
+- name: update watches
+  hosts: all
   become: true
-  command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+  tasks:
+    - name: Ubuntu inotify
+      command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-- name: Reboot
-  reboot:
-    reboot_timeout: 3600
+    - name: Reboot
+      reboot:
+        reboot_timeout: 3600
