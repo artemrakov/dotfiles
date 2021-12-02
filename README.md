@@ -1,5 +1,3 @@
-Update ansible playbook with geerlingguy.docker role for docker and markosamuli.asdf for asdf. [link](https://gitlab.com/hexlethq/programs/devops-for-programmers/hexlet-groups/devops-for-programmers-30/226562/-/blob/main/exercises/dotfiles/playbook.yml)
-
 ## VIM
 
 ### Update
