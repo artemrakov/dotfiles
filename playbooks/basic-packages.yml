@@ -1,9 +1,7 @@
 ---
 
-- hosts: all
+- hosts: localhost
   become: true
-  tags: setup
-
   tasks:
     - name: Install git
       apt:
@@ -16,41 +14,52 @@
       loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common', 'zsh', 'curl', 'vim', 'jq', 'build-essential', 'tklib', 'zlib1g-dev', 'libssl-dev', 'libffi-dev', 'libxml2', 'libxml2-dev', 'libxslt1-dev', 'libreadline-dev', 'tree', 'ncdu', 'htop', 'tig', 'neovim', 'imagemagick', 'dirmngr', 'gpg', 'gcc', 'fzf', 'bat', 'silversearcher-ag']
 
 
-    - name: Install zsh
-      roles:
-        - role: gantsign.oh-my-zsh
-          users:
-            - username: root
+- name: Install zsh
+  hosts: localhost
+  become: yes
 
-    - name: install and setup docker
-      roles:
-        - name: geerlingguy.docker
-          vars:
-            docker_install_compose: true
-            docker_users:
-              - "{{ user }}"
+  roles:
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: root
 
-    - name: Install asdf and plugins
-      roles:
-        - role: markosamuli.asdf
-          vars:
-            asdf_plugins:
-              - name: "nodejs"
-                versions: ["16.13.1"]
-                global: "16.13.1"
+- name: install and setup docker
+  hosts: localhost
+  become: yes
 
-              - name: "ruby"
-                versions: ["3.0.3"]
-                global: "3.0.3"
+  roles:
+    - name: geerlingguy.docker
+      vars:
+        docker_install_compose: true
+        docker_users:
+          - "{{ user }}"
+    - name: markosamuli.asdf
+      vars:
+        asdf_init_shell: true
 
-              - name: "python"
-                versions: ["3.10.0", "2.7.18"]
+- name: Install asdf and plugins
+  hosts: localhost
+  roles:
+    - role: markosamuli.asdf
+      vars:
+        asdf_plugins:
+          - name: "nodejs"
+            versions: ["16.13.1"]
+            global: "16.13.1"
+
+          - name: "ruby"
+            versions: ["3.0.3"]
+            global: "3.0.3"
+
+          - name: "python"
+            versions: ["3.10.0", "2.7.18"]
 
 
-    - name: Ubuntu inotify
-      become: true
-      command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+- name: Ubuntu inotify
+  hosts: localhost
+  become: true
+  command: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-    - name: Reboot
-      reboot:
-        reboot_timeout: 3600
+- name: Reboot
+  reboot:
+    reboot_timeout: 3600

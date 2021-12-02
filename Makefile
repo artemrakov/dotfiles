@@ -1,3 +1,10 @@
+install:
+	ansible-galaxy collection install -r requirements.yml
+	ansible-galaxy role install -r requirements.yml
+
+playbook:
+	ansible-playbook -i inventory.yml playbooks/main.yml -v
+
 macos-prepare:
 	brew install the_silver_searcher fzf bat htop fd ncdu tldr httpie
 
@@ -34,5 +41,3 @@ deps-gem:
 deps-npm:
 	npm install -g neovim
 	npm install -g prettier eslint babel-eslint eslint-plugin-import eslint-plugin-node
-	npx install-peerdeps -g eslint-config-airbnb
-	npm install -g stylelint stylelint-config-recommended stylelint-config-standard

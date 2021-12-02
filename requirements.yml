@@ -1,0 +1,7 @@
+roles:
+  - name: geerlingguy.docker
+  - name: gantsign.oh-my-zsh
+  - name: markosamuli.asdf
+
+collections:
+  - name: community.general
