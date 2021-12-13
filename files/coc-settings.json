@@ -20,6 +20,9 @@
       "rootPatterns": ["elm.json"]
     }
   },
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
   "coc.preferences.extensionUpdateCheck": "weekly",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": "# ",
