@@ -119,9 +119,16 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'tpope/vim-classpath', { 'for': 'clojure' }
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
+"
 
-Plug 'kovisoft/slimv', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+" Clojure things
+Plug 'tpope/vim-dispatch'
+Plug 'clojure-vim/vim-jack-in'
+Plug 'radenling/vim-dispatch-neovim'
+Plug 'Olical/conjure'
+
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 " Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -156,6 +163,7 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-yank',
       \ 'coc-git',
+      \ 'coc-conjure',
       \]
 
 call plug#end()
@@ -538,3 +546,7 @@ nmap <silent> <leader>t :TestNearest<CR>
 " nmap <silent> t<C-s> :TestSuite<CR>
 " nmap <silent> t<C-l> :TestLast<CR>
 " nmap <silent> t<C-g> :TestVisit<CR>
+
+let maplocalleader = ","
+
+
