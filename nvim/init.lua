@@ -6,6 +6,7 @@
 
 vim.g.did_load_filetypes = 1
 vim.g.fzf_history_dir = '~/.local/share/fzf-history'
+vim.g.maplocalleader = ","
 
 local hooks = require "core.hooks"
 
