@@ -5,6 +5,7 @@
 -- Please check NvChad docs if you're totally new to nvchad + dont know lua!!
 
 vim.g.did_load_filetypes = 1
+vim.g.fzf_history_dir = '~/.local/share/fzf-history'
 
 local hooks = require "core.hooks"
 
@@ -26,11 +27,13 @@ end)
 -- examples below:
 
 hooks.add("install_plugins", function(use)
+   use { "mhinz/vim-startify" }
    use { "tpope/vim-unimpaired" }
    use { "tpope/vim-surround" }
    use { "dyng/ctrlsf.vim" }
    use { "nvim-pack/nvim-spectre" }
    use { "nathom/filetype.nvim" }
+   use { "janko-m/vim-test" }
    use {
       "williamboman/nvim-lsp-installer",
       config = function()
@@ -44,6 +47,19 @@ hooks.add("install_plugins", function(use)
          end)
       end,
    }
+
+   -- Rails
+   use { "tpope/vim-rails" }
+
+
+   -- Clojure
+   use {'tpope/vim-dispatch'}
+   use {'clojure-vim/vim-jack-in'}
+   use {'radenling/vim-dispatch-neovim'}
+   use {'Olical/conjure'}
+   use {'guns/vim-sexp'}
+   use {'tpope/vim-sexp-mappings-for-regular-people'}
+
    -- use {
    --    "max397574/better-escape.nvim",
    --    event = "InsertEnter",
