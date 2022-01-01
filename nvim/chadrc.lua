@@ -15,6 +15,10 @@ M.options = {
   },
 }
 
+M.ui = {
+  theme = "jellybeans"
+}
+
 M.mappings.plugins = {
   telescope = {
     buffers = "<leader>b",
