@@ -164,6 +164,7 @@ let g:coc_global_extensions = [
       \ 'coc-yank',
       \ 'coc-git',
       \ 'coc-conjure',
+      \ 'coc-docker',
       \]
 
 call plug#end()
@@ -236,7 +237,8 @@ set shiftwidth=2
 "set softtabstop=2
 
 " set updatetime=300
-" set splitbelow
+set splitbelow
+set splitright
 " set cmdheight=2
 " " TODO: replace with "number" when new neovim will be released
 set signcolumn=yes
@@ -548,5 +550,3 @@ nmap <silent> <leader>t :TestNearest<CR>
 " nmap <silent> t<C-g> :TestVisit<CR>
 
 let maplocalleader = ","
-
-
