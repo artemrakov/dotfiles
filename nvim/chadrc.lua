@@ -16,7 +16,7 @@ M.options = {
 }
 
 M.ui = {
-  theme = "jellybeans"
+  theme = "onejelly"
 }
 
 M.mappings.plugins = {
