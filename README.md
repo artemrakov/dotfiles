@@ -43,6 +43,7 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 * `gj` – navigate through blocks of code – (), {}, [], etс
 * `gf` – open a file corresponding to a word under the cursor
 * `gd` – go to definition
+* `gr` - show references
 * `g;` – go to the last edited line in the current opened buffer
 * `gS` – convert oneline expression to multiline (useful for functions, arguments, data structures)
 * `gv` – reselect last visual selection
