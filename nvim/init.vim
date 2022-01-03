@@ -9,12 +9,17 @@ set smartcase
 set undofile
 set ignorecase
 set scrolloff=3
+set noswapfile 
 " :set numberwidth=1
 set completeopt=menu,menuone,noselect
 set termguicolors
+set splitbelow
+set splitright
 
 let mapleader = "\<Space>"
-let maplocalleader = "\<Space>"
+let maplocalleader = ","
+
+let g:rainbow_active = 1
 
 colorscheme material
 
@@ -32,6 +37,12 @@ augroup end
 
 map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
+
+map <Leader>nd :e ~/Dropbox<cr>
+map <Leader>nj :e ~/Dropbox/notes/debugging_journal.txt<cr>
+map <Leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
+map <Leader>np :sp ~/Dropbox/work/shogun/project-notes.md<cr>
 
 nmap <silent> // :nohlsearch<CR>
 
