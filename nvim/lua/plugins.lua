@@ -3,13 +3,6 @@ require('packer').startup({
   function(use)
     use { 'tpope/vim-sensible' }
     use 'mhinz/vim-startify'
-    use {
-      'Pocco81/AutoSave.nvim',
-      config = function ()
-        local autosave = require("autosave")
-        autosave.setup()
-      end
-    }
 
     use {
       'windwp/nvim-autopairs',
@@ -32,8 +25,7 @@ require('packer').startup({
     use 'lukas-reineke/indent-blankline.nvim'
     use {
       'feline-nvim/feline.nvim',
-      after = "nvim-web-devicons",
-      config = function() require('feline').setup() end
+      config = function() require('feline').setup({ preset = 'noicon' }) end
     }
     -- use 'glepnir/dashboard-nvim'
     use 'tpope/vim-surround'

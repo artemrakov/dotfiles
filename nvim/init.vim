@@ -28,6 +28,9 @@ let g:rainbow_active = 1
 
 colorscheme material
 
+
+noremap <Leader>s :update<CR>
+
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
