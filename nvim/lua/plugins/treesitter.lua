@@ -6,6 +6,8 @@ function M.run(use)
     run = ':TSUpdate',
     config = function ()
       require('nvim-treesitter.configs').setup {
+        ensure_installed = "maintained",
+
         highlight = {
           enable = true, -- false will disable the whole extension
         },
@@ -14,6 +16,9 @@ function M.run(use)
         },
         indent = {
           enable = true,
+        },
+        matchup = {
+          enable = true
         },
         rainbow = {
           enable = true,
@@ -62,6 +67,7 @@ function M.run(use)
   use 'romgrk/nvim-treesitter-context'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'p00f/nvim-ts-rainbow'
+  use 'andymass/vim-matchup'
 end
 
 return M

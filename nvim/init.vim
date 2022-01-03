@@ -33,8 +33,6 @@ let g:vimsyn_embed = 'l'
 
 colorscheme material
 
-noremap <Leader>s :update<CR>
-
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>

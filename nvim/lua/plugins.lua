@@ -3,13 +3,21 @@ require('packer').startup({
   function(use)
     use { 'tpope/vim-sensible' }
     use 'mhinz/vim-startify'
+    use 'tpope/vim-repeat'
+    use {
+      'Pocco81/AutoSave.nvim',
+      config = function ()
+        local autosave = require("autosave")
+        autosave.setup()
+      end
+    }
 
     use {
       'windwp/nvim-autopairs',
       config = function()
         local npairs = require('nvim-autopairs')
         npairs.setup({
-          check_ts = true,
+          check_ts = true
         })
         npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
         npairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))
@@ -23,11 +31,15 @@ require('packer').startup({
     use 'tpope/vim-sleuth'
     use 'wbthomason/packer.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
+    -- use {
+    --   'windwp/windline.nvim',
+    --   config = function() require('wlsample.bubble').setup() end
+    -- }
     use {
       'feline-nvim/feline.nvim',
       config = function() require('feline').setup({ preset = 'noicon' }) end
     }
-    -- use 'glepnir/dashboard-nvim'
+
     use 'tpope/vim-surround'
     use 'windwp/nvim-spectre'
     use 'dyng/ctrlsf.vim'
@@ -40,7 +52,6 @@ require('packer').startup({
     -- Rails
     use 'tpope/vim-rails'
     -- End
-    
     -- Clojure
 
     use 'tpope/vim-dispatch'

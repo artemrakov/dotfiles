@@ -70,15 +70,19 @@ function M.run(use)
     'saadparwaiz1/cmp_luasnip',
   }
 
-  use {
-    'ray-x/lsp_signature.nvim',
-    config = function ()
-      require "lsp_signature".setup({
-        -- debug = true,
-        -- log_path = '/tmp/debug.log'
-      })
-    end
-  }
+
+  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+  -- use {
+  --   'ray-x/lsp_signature.nvim',
+  --   config = function ()
+  --     require "lsp_signature".setup({
+  --       bind = true,
+  --       handler_opts = {
+  --         border = "rounded"
+  --       }
+  --     })
+  --   end
+  -- }
 
   use {
     'onsails/lspkind-nvim',
