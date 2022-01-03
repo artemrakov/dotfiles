@@ -8,54 +8,55 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 ```vim
 :PlugUpdate
 ```
+## VIM
 
 ### Main
 
-* Switch <ctr> and <caps lock>
-* Use <kbd><ctrl> + [</kbd> instead of <kbd>esc</kdb>
+* Switch `<ctrl>` and `<caps lock>`
+* Use `<ctrl> + [` instead of `<Esc>`
+* `<leader>` – Space
+* `<localleader>` - ,
 
-`<leader>` – Space
+### Navigation
 
-* `<leader> s` – save current file
+#### Moving between visible buffers
 
-### Moving between visible buffers
+* `<C-h>` – move left or open new left split
+* `<C-l>` – move right or open new right split
+* `<C-k>` – move up or open new top split
+* `<C-j>` – move down or open new bottom split
 
-* `<ctrl> h` – move left or open new left split
-* `<ctrl> l` – move right or open new right split
-* `<ctrl> k` – move up or open new top split
-* `<ctrl> j` – move down or open new bottom split
+#### Lists
+
+* `<ctrl> n` – next item
+* `<ctrl> p` – previous item
 
 ### File Tree
 
 * `<leader><leader>` – toggle filetree
-* `<ctrl> m` – locate opened file in the filetree
+* `<C-n>` – locate opened file in the filetree
+* `o` – open directory or file
 
 ### Searching and Navigation
 
-* `<leader> o` – current buffer tags
-* `<leader> p` – fuzzy search (files under git)
-* `<leader> g` – git grep
+* `<leader> sf` – find files
+* `<leader> sg` – git grep
+* `<leader> sc` – find commits
+* `<leader> so` – symbols
+* `<leader> sr` – references
 * `<leader> b` – show buffer list
+* `<leader>S` – replace
 
 ### Code editing and code navigation
 
 * `gcc` – toggle commenting
-* `gj` – navigate through blocks of code – (), {}, [], etс
 * `gf` – open a file corresponding to a word under the cursor
 * `gd` – go to definition
-* `gr` - show references
 * `g;` – go to the last edited line in the current opened buffer
-* `gS` – convert oneline expression to multiline (useful for functions, arguments, data structures)
 * `gv` – reselect last visual selection
-* `<ctrl> n` – insert next matching word (multicursor)
-* `]g` and `[g` – go through linter errors
-* `"y` & `"p` – copy text to system clipboard
-* `]<leader>` and `[<leader>` – add  empty line  above and under cursor
-* `<leader> d` – coc diagnostic
-* `<leader> f` – format in visual mode (prettier)
-* `<leader> fr` – search & replace
-* `<leader> rn` – replace word under cursor in current file
-
-  
+* `]g` and `[g` – go through diagnostics
+* `]<leader>` and `[<leader>` – add empty line above and under cursor
+* `<leader>ca` – show code actions
+ 
 ## Terminal theme
  https://github.com/sindresorhus/iterm2-snazzy

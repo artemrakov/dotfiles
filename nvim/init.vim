@@ -1,20 +1,24 @@
 lua require('config')
 
-" set mouse=a
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+set mouse=a
 set breakindent
 set number
 set signcolumn=yes
 set updatetime=250
 set smartcase
 set undofile
+set splitbelow
+set splitright
+set noswapfile
+
+" set undodir=/tmp/.vim/backups
 set ignorecase
 set scrolloff=3
-set noswapfile 
 " :set numberwidth=1
 set completeopt=menu,menuone,noselect
 set termguicolors
-set splitbelow
-set splitright
 
 let mapleader = "\<Space>"
 let maplocalleader = ","
@@ -28,21 +32,9 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-" Highlight on yank
-" nnoremap gV `[v`]
-augroup YankHighlight
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-augroup end
-
+" Edit .vimrc
 map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
-
-map <Leader>nd :e ~/Dropbox<cr>
-map <Leader>nj :e ~/Dropbox/notes/debugging_journal.txt<cr>
-map <Leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
-map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
-map <Leader>np :sp ~/Dropbox/work/shogun/project-notes.md<cr>
 
 nmap <silent> // :nohlsearch<CR>
 
@@ -53,31 +45,29 @@ nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> л (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> о (v:count == 0 ? 'gj' : 'j')
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>o <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
-" vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
+map <Leader>nd :e ~/Dropbox<cr>
+map <Leader>nj :e ~/Dropbox/notes/debugging_journal.txt<cr>
+map <Leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
+map <Leader>np :sp ~/Dropbox/work/shogun/project-notes.md<cr>
+
+" Find files using Telescope command-line sugar
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>sf <cmd>Telescope find_files<cr>
+nnoremap <leader>sb <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>sg <cmd>Telescope live_grep<cr>
+nnoremap <leader>sd <cmd>Telescope diagnostics<cr>
+nnoremap <leader>sc <cmd>Telescope git_commits<cr>
+nnoremap <leader>sr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>so <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>sa <cmd>Telescope lsp_range_code_actions<cr>
+nnoremap <leader>sh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader><leader> :NvimTreeToggle<CR>
-" nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <C-n> :NvimTreeFindFile<CR>
 
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-
-" > lspsaga
-nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-" <
+nnoremap <leader>S :lua require('spectre').open()<CR>
 
 " automatically run :PackerCompile whenever plugins.lua is updated
 augroup packer_user_config
@@ -87,3 +77,10 @@ augroup end
 
 " https://github.com/neovim/nvim-lspconfig/wiki/Code-Actions
  " autocmd CursorHold,CursorHoldI * lua require('code_action_utils').code_action_listener()
+
+" Highlight on yank
+" nnoremap gV `[v`]
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup end
