@@ -53,6 +53,7 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 * `gf` – open a file corresponding to a word under the cursor
 * `gd` – go to definition
 * `gD` - declarations
+* `gS` - singleline - multiline
 * `gi` - Implementations
 * `<Ctrl-k>` - signature help
 * `g;` – go to the last edited line in the current opened buffer
