@@ -58,11 +58,6 @@ require('packer').startup({
 
     -- End
 
-    use {
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu',
-    }
-
     use { 'tpope/vim-unimpaired' }
 
     use {
@@ -119,18 +114,6 @@ require('packer').startup({
       },
       config = function() require('nvim-tree').setup {} end
     }
-
-    -- use {
-    --   "folke/trouble.nvim",
-    --   requires = "kyazdani42/nvim-web-devicons",
-    --   config = function()
-    --     require("trouble").setup {
-    --       -- your configuration comes here
-    --       -- or leave it empty to use the default settings
-    --       -- refer to the configuration section below
-    --     }
-    --   end
-    -- }
 
     require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)

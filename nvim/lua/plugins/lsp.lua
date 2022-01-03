@@ -40,7 +40,7 @@ function M.run(use)
         }
 
         server:setup(opts)
-        -- vim.cmd [[ do User LspAttachBuffers ]]
+        vim.cmd [[ do User LspAttachBuffers ]]
       end)
     end,
   }
