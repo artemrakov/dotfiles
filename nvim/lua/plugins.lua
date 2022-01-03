@@ -35,6 +35,8 @@ require('packer').startup({
       'marko-cerovac/material.nvim'
     }
 
+    use 'AndrewRadev/splitjoin.vim'
+
     -- Rails
     use 'tpope/vim-rails'
     -- End
@@ -46,7 +48,7 @@ require('packer').startup({
     use 'radenling/vim-dispatch-neovim'
     use 'Olical/conjure'
     use 'guns/vim-sexp'
-    use'tpope/vim-sexp-mappings-for-regular-people'
+    use 'tpope/vim-sexp-mappings-for-regular-people'
 
     -- End
 
