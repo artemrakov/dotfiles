@@ -71,6 +71,16 @@ function M.run(use)
   }
 
   use {
+    'ray-x/lsp_signature.nvim',
+    config = function ()
+      require "lsp_signature".setup({
+        -- debug = true,
+        -- log_path = '/tmp/debug.log'
+      })
+    end
+  }
+
+  use {
     'onsails/lspkind-nvim',
     config = function ()
       local lspkind = require('lspkind')

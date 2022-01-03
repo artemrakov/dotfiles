@@ -58,8 +58,10 @@ function M.run(use)
 
     end
   }
+
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'romgrk/nvim-treesitter-context'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end
 
 return M

@@ -2,6 +2,7 @@ require('packer').startup({
 
   function(use)
     use { 'tpope/vim-sensible' }
+    use 'mhinz/vim-startify'
     use {
       'Pocco81/AutoSave.nvim',
       config = function ()
@@ -116,6 +117,17 @@ require('packer').startup({
     }
 
     use { 'windwp/nvim-ts-autotag' }
+
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
 
     require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)
