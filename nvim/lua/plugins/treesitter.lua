@@ -11,15 +11,14 @@ function M.run(use)
         },
         incremental_selection = {
           enable = true,
-          -- keymaps = {
-          --   init_selection = 'gnn',
-          --   node_incremental = 'grn',
-          --   scope_incremental = 'grc',
-          --   node_decremental = 'grm',
-          -- },
         },
         indent = {
           enable = true,
+        },
+        rainbow = {
+          enable = true,
+          extended_mode = true,
+          max_file_lines = nil,
         },
         textobjects = {
           select = {
@@ -62,6 +61,7 @@ function M.run(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'romgrk/nvim-treesitter-context'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'p00f/nvim-ts-rainbow'
 end
 
 return M

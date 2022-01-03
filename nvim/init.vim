@@ -19,15 +19,19 @@ set scrolloff=3
 " :set numberwidth=1
 set completeopt=menu,menuone,noselect
 set termguicolors
+set expandtab
+
+set softtabstop=2
+set tabstop=2
+" new line indent: how many spaces for one tab
+set shiftwidth=2
 
 let mapleader = "\<Space>"
 let maplocalleader = ","
 
 let g:vimsyn_embed = 'l'
-let g:rainbow_active = 1
 
 colorscheme material
-
 
 noremap <Leader>s :update<CR>
 
