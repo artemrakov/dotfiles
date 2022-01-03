@@ -126,6 +126,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'Olical/conjure'
+Plug 'luochen1990/rainbow'
 
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
@@ -277,6 +278,12 @@ noremap <Leader>s :update<CR>
 " Edit .vimrc
 map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
+
+map <Leader>nd :e ~/Dropbox<cr>
+map <Leader>nj :e ~/Dropbox/notes/debugging_journal.txt<cr>
+map <Leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
+map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
+map <Leader>np :sp ~/Dropbox/work/shogun/project-notes.md<cr>
 
 vmap gcc <plug>NERDCommenterToggle
 nmap gcc <plug>NERDCommenterToggle
@@ -550,3 +557,4 @@ nmap <silent> <leader>t :TestNearest<CR>
 " nmap <silent> t<C-g> :TestVisit<CR>
 
 let maplocalleader = ","
+let g:rainbow_active = 1
