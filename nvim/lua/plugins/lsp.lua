@@ -3,7 +3,7 @@ local M = {}
 function M.run(use)
   use {
     'williamboman/nvim-lsp-installer',
-    requires = { { 'neovim/nvim-lspconfig' } },
+    requires = { 'neovim/nvim-lspconfig' },
     config = function()
       local lsp_installer = require "nvim-lsp-installer"
 
@@ -27,6 +27,7 @@ function M.run(use)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
         vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
       end
 
@@ -44,13 +45,7 @@ function M.run(use)
     end,
   }
 
-
-  -- use {
-  --   'ray-x/lsp_signature.nvim',
-  --   config = function ()
-  --     require "lsp_signature".setup()
-  --   end
-  -- }
+  use 'kosayoda/nvim-lightbulb'
 
 end
 

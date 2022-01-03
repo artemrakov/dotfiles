@@ -19,7 +19,7 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 
 ### Navigation
 
-#### Moving between visible buffers
+#### oving between visible buffers
 
 * `<C-h>` – move left or open new left split
 * `<C-l>` – move right or open new right split
@@ -52,6 +52,9 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 * `gcc` – toggle commenting
 * `gf` – open a file corresponding to a word under the cursor
 * `gd` – go to definition
+* `gD` - declarations
+* `gi` - Implementations
+* `<Ctrl-k>` - signature help
 * `g;` – go to the last edited line in the current opened buffer
 * `gv` – reselect last visual selection
 * `]g` and `[g` – go through diagnostics
