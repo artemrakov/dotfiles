@@ -10,7 +10,7 @@ function M.run(use)
       local servers = {
         'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
         'emmet_ls', 'gopls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
-        'zk', 'solargraph', 'sqlls', 'sorbet', 'stylelint_lsp', 'terraformls',
+        'zk', 'solargraph', 'sqlls', 'stylelint_lsp', 'terraformls',
         'vimls', 'lemminx', 'clojure_lsp'
       }
 
@@ -59,6 +59,10 @@ function M.run(use)
         server:setup(opts)
         vim.cmd [[ do User LspAttachBuffers ]]
       end)
+
+      require'lspconfig'.solargraph.setup{
+        bundle = "/root/.asdf/shims/bundle"
+      }
     end,
   }
 
