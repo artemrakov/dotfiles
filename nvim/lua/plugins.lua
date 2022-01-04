@@ -60,6 +60,7 @@ require('packer').startup({
     use 'Olical/conjure'
     use 'guns/vim-sexp'
     use 'tpope/vim-sexp-mappings-for-regular-people'
+    use 'clojure-vim/clojure.vim'
 
     -- End
 
