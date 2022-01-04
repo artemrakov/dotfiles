@@ -74,9 +74,13 @@ function M.run(use)
     config = function ()
       require "lsp_signature".setup({
         bind = true,
+        doc_lines = 0,
+        hint_enable = false,
         handler_opts = {
-          border = "rounded"
+          border = "none"
         },
+        floating_window = false,
+        toggle_key = "<C-d>"
       })
     end
   }
