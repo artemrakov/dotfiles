@@ -11,7 +11,7 @@ function M.run(use)
         'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
         'emmet_ls', 'gopls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
         'zk', 'solargraph', 'sqlls', 'sorbet', 'stylelint_lsp', 'terraformls',
-        'vimls', 'lemminx'
+        'vimls', 'lemminx', 'clojure_lsp'
       }
 
       for _, name in pairs(servers) do
