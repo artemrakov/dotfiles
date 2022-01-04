@@ -30,7 +30,7 @@ require('packer').startup({
     }
     use 'tpope/vim-sleuth'
     use 'wbthomason/packer.nvim'
-    use 'lukas-reineke/indent-blankline.nvim'
+    -- use 'lukas-reineke/indent-blankline.nvim'
     -- use {
     --   'windwp/windline.nvim',
     --   config = function() require('wlsample.bubble').setup() end

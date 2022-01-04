@@ -76,7 +76,7 @@ function M.run(use)
         bind = true,
         handler_opts = {
           border = "rounded"
-        }
+        },
       })
     end
   }
