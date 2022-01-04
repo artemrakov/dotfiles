@@ -4,6 +4,7 @@ require('packer').startup({
     use { 'tpope/vim-sensible' }
     use 'mhinz/vim-startify'
     use 'tpope/vim-repeat'
+    use { 'ntpeters/vim-better-whitespace' }
     use {
       'Pocco81/AutoSave.nvim',
       config = function ()
