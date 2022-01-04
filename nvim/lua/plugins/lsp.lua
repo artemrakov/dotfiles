@@ -50,24 +50,35 @@ function M.run(use)
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+      local enhance_server_opts = {
+        ["solargraph"] = function(opts)
+          opts.settings = {
+            solargraph = {
+              use_bunlder = true
+            },
+          }
+
+        end,
+      }
+
       lsp_installer.on_server_ready(function(server)
         local opts = {
           on_attach = on_attach,
           capabilities = capabilities,
         }
 
+        if enhance_server_opts[server.name] then
+          -- Enhance the default opts with the server-specific ones
+          enhance_server_opts[server.name](opts)
+        end
+
         server:setup(opts)
         vim.cmd [[ do User LspAttachBuffers ]]
       end)
-
-      require'lspconfig'.solargraph.setup{
-        bundle = "/root/.asdf/shims/bundle"
-      }
     end,
   }
 
   use 'kosayoda/nvim-lightbulb'
-
 end
 
 return M
