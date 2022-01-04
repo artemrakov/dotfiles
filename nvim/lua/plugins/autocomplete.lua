@@ -54,7 +54,6 @@ function M.run(use)
           { name = 'path' },
           { name = 'buffer' },
           { name = 'cmdline' },
-          { name = 'path' },
         },
       }
     end
@@ -70,19 +69,17 @@ function M.run(use)
     'saadparwaiz1/cmp_luasnip',
   }
 
-
-  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
-  -- use {
-  --   'ray-x/lsp_signature.nvim',
-  --   config = function ()
-  --     require "lsp_signature".setup({
-  --       bind = true,
-  --       handler_opts = {
-  --         border = "rounded"
-  --       }
-  --     })
-  --   end
-  -- }
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function ()
+      require "lsp_signature".setup({
+        bind = true,
+        handler_opts = {
+          border = "rounded"
+        }
+      })
+    end
+  }
 
   use {
     'onsails/lspkind-nvim',
