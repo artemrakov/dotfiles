@@ -10,7 +10,7 @@ function M.run(use)
       local servers = {
         'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
         'emmet_ls', 'gopls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
-        'zk', 'solargraph', 'sqlls', 'stylelint_lsp', 'terraformls',
+        'zk', 'sqlls', 'stylelint_lsp', 'terraformls',
         'vimls', 'lemminx', 'clojure_lsp'
       }
 
@@ -51,15 +51,14 @@ function M.run(use)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       local enhance_server_opts = {
-        ["solargraph"] = function(opts)
+        ["jsonls"] = function(opts)
           opts.settings = {
-            solargraph = {
-              use_bunlder = true
+            json = {
+              schemas = require('schemastore').json.schemas()
             },
           }
-
         end,
-      }
+     }
 
       lsp_installer.on_server_ready(function(server)
         local opts = {
@@ -75,6 +74,18 @@ function M.run(use)
         server:setup(opts)
         vim.cmd [[ do User LspAttachBuffers ]]
       end)
+
+      require'lspconfig'.solargraph.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        cmd = { "/root/.asdf/shims/solargraph", "stdio" }
+        -- settings = {
+          -- solargraph = {
+            -- bundlerPath = "/root/.asdf/shims/bundler",
+          -- },
+          -- commandPath = "/root/.asdf/shims/solargraph"
+        -- }
+      }
     end,
   }
 

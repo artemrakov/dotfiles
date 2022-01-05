@@ -39,8 +39,16 @@ update-vim-plugins:
 	nvim --headless +CocUpdate +qall
 
 deps-gem:
-	gem install rake neovim mdl haml-lint sqlint rubocop rubocop-rspec solargraph fastri slim_lint brakeman rails_best_practices reek rspec pry pry-byebug colored http
+	gem install solargraph rubocop neovim
+	gem install rubocop-rspec rubocop-rails rubocop-performance rubocop-rake
+	gem install sorbet sorbet-runtime
+	gem install haml_lint slim_lint
+	gem install brakeman reek
 
 deps-npm:
 	npm install -g neovim
-	npm install -g prettier eslint babel-eslint eslint-plugin-import eslint-plugin-node
+	npm install -g prettier eslint @babel/eslint-parser eslint-plugin-import eslint-plugin-node
+	npx install-peerdeps -g eslint-config-airbnb
+	npm install -g stylelint stylelint-config-recommended stylelint-config-standard
+	npm install -g yaml-language-server markdownlint bash-language-server
+	npm install -g dockerfile-language-server-nodejs

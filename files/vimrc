@@ -166,7 +166,10 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ 'coc-conjure',
       \ 'coc-docker',
+      \ 'coc-clojure',
       \]
+
+" \ 'coc-graphql',
 
 call plug#end()
 
@@ -558,3 +561,5 @@ nmap <silent> <leader>t :TestNearest<CR>
 
 let maplocalleader = ","
 let g:rainbow_active = 1
+
+let g:conjure#mapping#doc_word = "<localleader>K"

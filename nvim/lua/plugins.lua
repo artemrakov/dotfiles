@@ -98,6 +98,7 @@ require('packer').startup({
       end,
       requires = { 'nvim-lua/plenary.nvim' }
     }
+    use 'b0o/schemastore.nvim'
 
     use {
       'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
@@ -123,6 +124,8 @@ require('packer').startup({
     }
 
     use { 'windwp/nvim-ts-autotag' }
+    use 'slim-template/vim-slim'
+
 
     use {
       "folke/which-key.nvim",

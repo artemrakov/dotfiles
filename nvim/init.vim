@@ -12,11 +12,15 @@ set undofile
 set splitbelow
 set splitright
 set noswapfile
+set numberwidth=2
+set norelativenumber
+set cpoptions+=n
+set cul
+
 
 " set undodir=/tmp/.vim/backups
 set ignorecase
 set scrolloff=3
-" :set numberwidth=1
 set completeopt=menu,menuone,noselect
 set termguicolors
 set expandtab
@@ -75,6 +79,12 @@ nnoremap <leader><leader> :NvimTreeToggle<CR>
 nnoremap <C-n> :NvimTreeFindFile<CR>
 
 nnoremap <leader>S :lua require('spectre').open()<CR>
+
+vmap "y "*y
+nmap "y "*y
+nmap "Y "*Y
+nmap "p "*p
+nmap "P "*P
 
 " automatically run :PackerCompile whenever plugins.lua is updated
 augroup packer_user_config
