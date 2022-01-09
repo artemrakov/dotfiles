@@ -27,6 +27,7 @@ set expandtab
 
 set softtabstop=2
 set tabstop=2
+set smarttab
 " new line indent: how many spaces for one tab
 set shiftwidth=2
 
@@ -37,6 +38,10 @@ let g:vimsyn_embed = 'l'
 let g:better_whitespace_enabled=1
 
 colorscheme material
+
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+
 
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
@@ -49,17 +54,14 @@ map <leader>vr :source $MYVIMRC<CR>
 
 nmap <silent> // :nohlsearch<CR>
 
-nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
-
 " TODO: improve n+1 line moving by russian keys
 nnoremap <expr> л (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> о (v:count == 0 ? 'gj' : 'j')
 
 
-map <Leader>nd :e ~/Dropbox<cr>
-map <Leader>nj :e ~/Dropbox/notes/debugging_journal.txt<cr>
-map <Leader>nc :e ~/Dropbox/notes/coding-notes.txt<cr>
+" map <Leader>nd :e ~/Dropbox<cr>
+map <Leader>nj :sp ~/Dropbox/notes/debugging_journal.txt<cr>
+map <Leader>nc :sp ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
 map <Leader>np :sp ~/Dropbox/work/shogun/project-notes.md<cr>
 
@@ -78,6 +80,8 @@ nnoremap <leader>sh <cmd>Telescope help_tags<cr>
 nnoremap <leader><leader> :NvimTreeToggle<CR>
 nnoremap <C-n> :NvimTreeFindFile<CR>
 
+nnoremap <leader>ff :Format<CR>
+
 nnoremap <leader>S :lua require('spectre').open()<CR>
 
 vmap "y "*y
@@ -85,6 +89,8 @@ nmap "y "*y
 nmap "Y "*Y
 nmap "p "*p
 nmap "P "*P
+
+
 
 " automatically run :PackerCompile whenever plugins.lua is updated
 augroup packer_user_config
