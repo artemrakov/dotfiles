@@ -55,7 +55,7 @@ https://vitux.com/how-to-install-dropbox-on-debian-10/
 * `gD` - declarations
 * `gS` - singleline - multiline
 * `gi` - Implementations
-* `<Ctrl-k>` - signature help
+* `<Ctrl-d>` - signature help
 * `g;` – go to the last edited line in the current opened buffer
 * `gv` – reselect last visual selection
 * `]g` and `[g` – go through diagnostics
