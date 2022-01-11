@@ -1,4 +1,4 @@
-require('packer').startup({
+return require('packer').startup({
 
   function(use)
     use { 'tpope/vim-sensible' }
@@ -15,6 +15,10 @@ require('packer').startup({
 
     use {
       'windwp/nvim-autopairs',
+      requires = {
+        'hrsh7th/nvim-cmp',
+        'nvim-treesitter/nvim-treesitter',
+      },
       config = function()
         local npairs = require('nvim-autopairs')
         npairs.setup({
@@ -26,7 +30,7 @@ require('packer').startup({
 
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         local cmp = require('cmp')
-        cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
       end
     }
     use 'tpope/vim-sleuth'
