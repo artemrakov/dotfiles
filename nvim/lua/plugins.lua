@@ -3,6 +3,7 @@ return require('packer').startup({
   function(use)
     use { 'tpope/vim-sensible' }
     use 'mhinz/vim-startify'
+    use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
     use { 'ntpeters/vim-better-whitespace' }
     use {

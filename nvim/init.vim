@@ -36,6 +36,8 @@ let maplocalleader = ","
 
 let g:vimsyn_embed = 'l'
 let g:better_whitespace_enabled=1
+let g:gitblame_enabled = 0
+
 
 colorscheme material
 
@@ -83,6 +85,8 @@ nnoremap <C-n> :NvimTreeFindFile<CR>
 nnoremap <leader>ff :Format<CR>
 
 nnoremap <leader>S :lua require('spectre').open()<CR>
+
+nnoremap <leader>gb :GitBlameToggle<cr>
 
 vmap "y "*y
 nmap "y "*y
