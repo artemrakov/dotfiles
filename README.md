@@ -1,6 +1,8 @@
 ### Add dropbox setup to ansible 
 https://vitux.com/how-to-install-dropbox-on-debian-10/
 
+https://github.com/Karmenzind/monaco-nerd-fonts
+
 ## VIM
 
 ### Update
