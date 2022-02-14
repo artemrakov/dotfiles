@@ -84,10 +84,11 @@ return require('packer').startup({
     use { 'tpope/vim-unimpaired' }
 
     use {
-      'terrortylor/nvim-comment',
-      config = function() require('nvim_comment').setup() end
+      'numToStr/Comment.nvim',
+      config = function ()
+        require('Comment').setup()
+      end
     }
-
     -- use { 'andymass/vim-matchup' }
 
     use {
