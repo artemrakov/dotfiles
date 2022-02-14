@@ -14,13 +14,11 @@ function M.run(use)
         'vimls', 'lemminx', 'clojure_lsp'
       }
 
-      for _, name in pairs(servers) do
+       for _, name in pairs(servers) do
         local server_is_found, server = lsp_installer.get_server(name)
-        if server_is_found then
-          if not server:is_installed() then
-            print("Installing " .. name)
-            server:install()
-          end
+        if server_is_found and not server:is_installed() then
+          print("Installing " .. name)
+          server:install()
         end
       end
 
@@ -49,6 +47,7 @@ function M.run(use)
       end
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       local enhance_server_opts = {
         ["jsonls"] = function(opts)

@@ -34,6 +34,17 @@ return require('packer').startup({
         cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
       end
     }
+
+    use { "ellisonleao/glow.nvim" }
+    -- anotations
+    use {
+      "danymat/neogen",
+      config = function()
+        require('neogen').setup {}
+      end,
+      requires = "nvim-treesitter/nvim-treesitter",
+    }
+
     use 'tpope/vim-sleuth'
     use 'wbthomason/packer.nvim'
     -- use 'lukas-reineke/indent-blankline.nvim'
@@ -128,6 +139,11 @@ return require('packer').startup({
       config = function() require('nvim-tree').setup {} end
     }
 
+    -- use {
+    --   "beauwilliams/focus.nvim",
+    --   config = function() require("focus").setup() end
+    -- }
+
     use { 'windwp/nvim-ts-autotag' }
     use 'slim-template/vim-slim'
 
@@ -149,6 +165,7 @@ return require('packer').startup({
 
   end,
   config = {
+    enable = true,
     display = {
       open_fn = require('packer.util').float,
     }
