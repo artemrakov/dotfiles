@@ -1,6 +1,8 @@
 local M = {}
 
 function M.run(use)
+  use 'andymass/vim-matchup'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -13,6 +15,12 @@ function M.run(use)
         },
         incremental_selection = {
           enable = true,
+          keymaps = {
+            init_selection = 'gnn',
+            node_incremental = 'grn',
+            scope_incremental = 'grc',
+            node_decremental = 'grm',
+          },
         },
         indent = {
           enable = true,
@@ -64,10 +72,9 @@ function M.run(use)
   }
 
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'romgrk/nvim-treesitter-context'
+  -- use 'romgrk/nvim-treesitter-context'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'p00f/nvim-ts-rainbow'
-  use 'andymass/vim-matchup'
 end
 
 return M
