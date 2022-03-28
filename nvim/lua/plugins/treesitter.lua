@@ -1,7 +1,16 @@
 local M = {}
 
 function M.run(use)
-  use 'andymass/vim-matchup'
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'andymass/vim-matchup',
+    'windwp/nvim-ts-autotag',
+    'p00f/nvim-ts-rainbow',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+    }
+  }
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -12,6 +21,9 @@ function M.run(use)
 
         highlight = {
           enable = true, -- false will disable the whole extension
+        },
+        autotag = {
+          enable = true,
         },
         incremental_selection = {
           enable = true,
@@ -70,11 +82,6 @@ function M.run(use)
 
     end
   }
-
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  -- use 'romgrk/nvim-treesitter-context'
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'p00f/nvim-ts-rainbow'
 end
 
 return M
