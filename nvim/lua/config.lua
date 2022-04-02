@@ -15,7 +15,6 @@ end
 
 require('plugins')
 
-vim.g.material_style = "deep ocean"
 
 vim.diagnostic.config({
   virtual_text = {

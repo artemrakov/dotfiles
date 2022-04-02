@@ -63,6 +63,8 @@ return require('packer').startup({
     use {
       'marko-cerovac/material.nvim'
     }
+    use { 'rktjmp/lush.nvim'}
+    use { 'metalelf0/jellybeans-nvim' }
 
     use 'AndrewRadev/splitjoin.vim'
 
@@ -145,7 +147,6 @@ return require('packer').startup({
     --   config = function() require("focus").setup() end
     -- }
 
-    use { 'windwp/nvim-ts-autotag' }
     use 'slim-template/vim-slim'
 
 

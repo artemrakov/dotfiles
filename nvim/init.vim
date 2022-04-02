@@ -39,7 +39,7 @@ let g:better_whitespace_enabled=1
 let g:gitblame_enabled = 0
 
 
-colorscheme material
+colorscheme jellybeans-nvim
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
