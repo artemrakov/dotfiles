@@ -6,6 +6,7 @@ return require('packer').startup({
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
     use { 'ntpeters/vim-better-whitespace' }
+
     use {
       'Pocco81/AutoSave.nvim',
       config = function ()
