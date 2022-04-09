@@ -13,7 +13,7 @@ set splitbelow
 set splitright
 set noswapfile
 set numberwidth=2
-set norelativenumber
+set relativenumber
 set cpoptions+=n
 set cul
 
@@ -123,3 +123,19 @@ if has('folding')
 endif
 
 set foldlevelstart=1
+
+
+function! Cycle_numbering() abort
+  if exists('+relativenumber')
+    execute {
+          \ '00': 'set relativenumber   | set number',
+          \ '01': 'set norelativenumber | set number',
+          \ '10': 'set norelativenumber | set nonumber',
+          \ '11': 'set norelativenumber | set number' }[&number . &relativenumber]
+  else
+    " No relative numbering, just toggle numbers on and off.
+    set number!<CR>
+  endif
+endfunction
+
+nnoremap <silent> <Leader>r :call Cycle_numbering()<CR>
