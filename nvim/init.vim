@@ -5,7 +5,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 set mouse=a
 set breakindent
 set number
-set signcolumn=number
+set signcolumn=yes
 set updatetime=250
 set smartcase
 set undofile
