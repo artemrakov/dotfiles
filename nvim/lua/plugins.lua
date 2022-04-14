@@ -46,7 +46,7 @@ return require('packer').startup({
       requires = "nvim-treesitter/nvim-treesitter",
     }
 
-    use 'tpope/vim-sleuth'
+    use 'NMAC427/guess-indent.nvim'
     use 'wbthomason/packer.nvim'
     -- use 'lukas-reineke/indent-blankline.nvim'
     -- use {
