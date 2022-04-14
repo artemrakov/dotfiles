@@ -140,3 +140,6 @@ endfunction
 
 nnoremap <silent> <Leader>r :call Cycle_numbering()<CR>
 nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
