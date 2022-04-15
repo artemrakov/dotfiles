@@ -62,7 +62,7 @@ return require('packer').startup({
     use 'windwp/nvim-spectre'
     use 'dyng/ctrlsf.vim'
     use {
-      'marko-cerovac/material.nvim'
+     'marko-cerovac/material.nvim'
     }
     use { 'rktjmp/lush.nvim'}
     use { 'metalelf0/jellybeans-nvim' }
@@ -149,18 +149,6 @@ return require('packer').startup({
     -- }
 
     use 'slim-template/vim-slim'
-
-
-    use {
-      "folke/which-key.nvim",
-      config = function()
-        require("which-key").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
 
     require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)
