@@ -54,8 +54,25 @@ return require('packer').startup({
     --   config = function() require('wlsample.bubble').setup() end
     -- }
     use {
-      'feline-nvim/feline.nvim',
-      config = function() require('feline').setup({ preset = 'noicon' }) end
+      'nvim-lualine/lualine.nvim',
+      config = function() require('lualine').setup({
+        options = {
+          icons_enabled = false,
+          theme = 'auto',
+          globalstatus = true,
+          section_separators = { left = '', right = ''},
+          component_separators = { left = '|', right = '|'},
+        },
+        sections = {
+          lualine_a = {'mode'},
+          lualine_b = {'branch', 'diff', 'diagnostics'},
+          lualine_c = {'filename'},
+          lualine_x = {'encoding', 'filetype'},
+          lualine_y = {'progress'},
+          lualine_z = {'location'}
+        },
+
+      }) end
     }
 
     use 'tpope/vim-surround'
