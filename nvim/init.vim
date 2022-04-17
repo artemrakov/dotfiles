@@ -144,3 +144,6 @@ nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 " Command mappings
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+" Toggle folds
+nnoremap <s-tab> za
