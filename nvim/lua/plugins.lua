@@ -2,7 +2,6 @@ return require('packer').startup({
 
   function(use)
     use { 'tpope/vim-sensible' }
-    use 'mhinz/vim-startify'
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
     use { 'ntpeters/vim-better-whitespace' }
@@ -157,7 +156,26 @@ return require('packer').startup({
       requires = {
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
-      config = function() require('nvim-tree').setup {} end
+      config = function() require('nvim-tree').setup({
+        update_cwd = true,
+        update_focused_file = {
+          enable = true,
+          update_cwd = true
+        },
+      }) end
+    }
+
+    use {
+      'goolord/alpha-nvim',
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.startify'.config)
+      end
+    }
+
+    use {
+      'notjedi/nvim-rooter.lua',
+      config = function() require'nvim-rooter'.setup() end
     }
 
     -- use {

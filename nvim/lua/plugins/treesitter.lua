@@ -44,7 +44,7 @@ function M.run(use)
         rainbow = {
           enable = true,
           extended_mode = true,
-          max_file_lines = nil,
+          max_file_lines = 1000,
         },
         textobjects = {
           select = {
