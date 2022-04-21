@@ -163,3 +163,5 @@ endfunction
 
 nnoremap <silent> <Leader>z :call Zap()<CR>
 
+" Repeat last macro.
+nnoremap <Enter> @@
