@@ -15,6 +15,7 @@ set noswapfile
 set numberwidth=2
 set relativenumber
 set cpoptions+=n
+set clipboard=unnamedplus
 set cul
 
 
