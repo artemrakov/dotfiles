@@ -62,6 +62,9 @@
 [branch "master"]
   mergeoptions = --no-edit
 
+[branch "main"]
+  mergeoptions = --no-edit
+
 [user]
 	email = artem@rakov.me
 	name = Artem Rakov
