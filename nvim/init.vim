@@ -162,6 +162,3 @@ function! Zap() abort
 endfunction
 
 nnoremap <silent> <Leader>z :call Zap()<CR>
-
-" Repeat last macro if in a normal buffer.
-nnoremap <silent> <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
