@@ -11,7 +11,7 @@ function M.run(use)
         'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
         'emmet_ls', 'gopls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
         'sqlls', 'terraformls',
-        'vimls', 'lemminx', 'clojure_lsp', 'hls'
+        'vimls', 'lemminx', 'clojure_lsp', 'hls', 'solargraph'
       }
 
        for _, name in pairs(servers) do
@@ -74,17 +74,17 @@ function M.run(use)
         vim.cmd [[ do User LspAttachBuffers ]]
       end)
 
-      require'lspconfig'.solargraph.setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        cmd = { "/root/.asdf/shims/solargraph", "stdio" }
-        -- settings = {
-          -- solargraph = {
-            -- bundlerPath = "/root/.asdf/shims/bundler",
-          -- },
-          -- commandPath = "/root/.asdf/shims/solargraph"
-        -- }
-      }
+      -- require'lspconfig'.solargraph.setup {
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --   cmd = { "/arakov/.asdf/shims/solargraph", "stdio" }
+      --   -- settings = {
+      --     -- solargraph = {
+      --       -- bundlerPath = "/root/.asdf/shims/bundler",
+      --     -- },
+      --     -- commandPath = "/root/.asdf/shims/solargraph"
+      --   -- }
+      -- }
     end,
   }
 
