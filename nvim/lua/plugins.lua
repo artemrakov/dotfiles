@@ -180,22 +180,13 @@ return require('packer').startup({
       config = function() require'nvim-rooter'.setup() end
     }
 
-    use {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
 
     -- use {
     --   "beauwilliams/focus.nvim",
     --   config = function() require("focus").setup() end
     -- }
 
+    use "Pocco81/TrueZen.nvim"
     use 'slim-template/vim-slim'
 
     require('plugins.treesitter').run(use)
