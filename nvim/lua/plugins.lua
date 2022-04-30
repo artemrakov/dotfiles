@@ -188,6 +188,9 @@ return require('packer').startup({
 
     use "Pocco81/TrueZen.nvim"
     use 'slim-template/vim-slim'
+    use 'meain/vim-printer'
+
+
 
     require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)

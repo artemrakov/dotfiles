@@ -162,7 +162,7 @@ function! Cycle_numbering() abort
   endif
 endfunction
 
-nnoremap <silent> <Leader>r :call Cycle_numbering()<CR>
+nnoremap <silent> <Leader>l :call Cycle_numbering()<CR>
 nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 
 " Command mappings
