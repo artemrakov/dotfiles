@@ -115,15 +115,38 @@ augroup YankHighlight
   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
 
+let s:middot='·'
+let s:raquo='»'
+let s:small_l='l'
+
+" Override default `foldtext()`, which produces something like:
+"
+"   +---  2 lines: source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim--------------------------------
+"
+" Instead returning:
+"
+"   »··[2ℓ]··: source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim···································
+"
+function! Foldtext() abort
+  let l:lines='[' . (v:foldend - v:foldstart + 1) . s:small_l . ']'
+  let l:first=substitute(getline(v:foldstart), '\v *', '', '')
+  let l:dashes=substitute(v:folddashes, '-', s:middot, 'g')
+  return s:raquo . s:middot . s:middot . l:lines . l:dashes . ': ' . l:first
+endfunction
+
 if has('folding')
   if has('windows')
-    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+    set fillchars=diff:∙                " BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+    set fillchars+=fold:·               " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+    set fillchars+=vert:┃               " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
   endif
-  set foldmethod=indent               " not as cool as syntax, but faster
-  set foldlevelstart=99               " start unfolded
+
+  set foldmethod=indent                 " not as cool as syntax, but faster
+  set foldlevelstart=99                 " start unfolded
+  set foldtext=Foldtext()
 endif
 
-set foldlevelstart=1
+set foldlevelstart=2
 
 
 function! Cycle_numbering() abort
