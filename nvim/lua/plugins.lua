@@ -4,6 +4,7 @@ return require('packer').startup({
     use { 'tpope/vim-sensible' }
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
+    use 'tpope/vim-eunuch'
     use { 'ntpeters/vim-better-whitespace' }
     use 'wincent/replay'
 
