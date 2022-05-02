@@ -5,6 +5,7 @@ return require('packer').startup({
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
     use 'tpope/vim-eunuch'
+    use 'jpalardy/vim-slime'
     use { 'ntpeters/vim-better-whitespace' }
     use 'wincent/replay'
 
