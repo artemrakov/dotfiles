@@ -146,7 +146,7 @@ if has('folding')
   set foldtext=Foldtext()
 endif
 
-set foldlevelstart=2
+set foldlevelstart=1
 
 
 function! Cycle_numbering() abort
@@ -170,7 +170,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " Toggle folds
-nnoremap <s-tab> za
+nnoremap <tab> za
 
 function! Arakov_substitute(pattern, replacement, flags) abort
   let l:number=1
