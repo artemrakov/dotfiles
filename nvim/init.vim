@@ -170,7 +170,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " Toggle folds
-nnoremap <tab> za
+" nnoremap <tab> za
 
 function! Arakov_substitute(pattern, replacement, flags) abort
   let l:number=1
