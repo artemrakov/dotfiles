@@ -64,7 +64,6 @@ function M.run(use)
           { name = 'buffer' },
           { name = 'cmdline' },
           { name = 'path' },
-          { name = "copilot" },
         },
       }
     end,
@@ -107,20 +106,6 @@ function M.run(use)
   use {
     'rafamadriz/friendly-snippets',
     requires = { 'hrsh7th/nvim-cmp' },
-  }
-
-  use {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup()
-      end, 100)
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua", "nvim-cmp" },
   }
 
   -- nvim-cmp supports additional completion capabilities
