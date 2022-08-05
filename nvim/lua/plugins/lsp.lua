@@ -10,7 +10,7 @@ function M.run(use)
       local servers = {
         'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
         'emmet_ls', 'gopls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
-        'sqlls', 'terraformls',
+        'sqlls', 'terraformls', 'elixirls',
         'vimls', 'lemminx', 'clojure_lsp', 'hls', 'solargraph'
       }
 

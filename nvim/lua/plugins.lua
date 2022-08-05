@@ -181,6 +181,11 @@ return require('packer').startup({
       config = function() require'nvim-rooter'.setup() end
     }
 
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
 
 
     -- use {

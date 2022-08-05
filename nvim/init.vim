@@ -193,3 +193,4 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 let g:slime_target = "tmux"
+let g:mkdp_auto_close = 0
