@@ -146,8 +146,6 @@ if has('folding')
   set foldtext=Foldtext()
 endif
 
-set foldlevelstart=1
-
 
 function! Cycle_numbering() abort
   if exists('+relativenumber')
