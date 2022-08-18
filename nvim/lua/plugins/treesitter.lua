@@ -7,6 +7,14 @@ function M.run(use)
     'windwp/nvim-ts-autotag',
     'p00f/nvim-ts-rainbow',
     'JoosepAlviste/nvim-ts-context-commentstring',
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      config = function()
+        require'treesitter-context'.setup {
+          separator = '-'
+        }
+      end
+    },
     requires = {
       'nvim-treesitter/nvim-treesitter',
     }

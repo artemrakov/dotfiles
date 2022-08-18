@@ -10,9 +10,9 @@ return require('packer').startup({
     use 'wincent/replay'
 
     use {
-      'Pocco81/AutoSave.nvim',
+      'pocco81/auto-save.nvim',
       config = function ()
-        local autosave = require("autosave")
+        local autosave = require("auto-save")
         autosave.setup()
       end
     }
@@ -193,7 +193,6 @@ return require('packer').startup({
     --   config = function() require("focus").setup() end
     -- }
 
-    use "Pocco81/TrueZen.nvim"
     use 'slim-template/vim-slim'
     use 'meain/vim-printer'
 
