@@ -62,7 +62,7 @@ nnoremap <expr> л (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> о (v:count == 0 ? 'gj' : 'j')
 
 
-" map <Leader>nd :e ~/Dropbox<cr>
+map <Leader>nd :e ~/Dropbox<cr>
 map <Leader>nj :sp ~/Dropbox/notes/debugging_journal.txt<cr>
 map <Leader>nc :sp ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>nn :sp ~/Dropbox/notes/programming_notes.txt<cr>
