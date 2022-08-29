@@ -25,6 +25,7 @@ export LC_ALL=en_US.UTF-8
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 export BUNDLER_EDITOR="nvim"
 export EDITOR="nvim"
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

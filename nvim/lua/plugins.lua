@@ -8,6 +8,7 @@ return require('packer').startup({
     use 'jpalardy/vim-slime'
     use { 'ntpeters/vim-better-whitespace' }
     use 'wincent/replay'
+    use 'folke/tokyonight.nvim'
 
     use {
       'pocco81/auto-save.nvim',
