@@ -17,9 +17,9 @@ require('plugins')
 
 
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = 'x'
-  }
+  -- virtual_text = {
+  --   prefix = 'x'
+  -- }
   -- signs = true,
   -- underline = true,
   -- update_in_insert = false,
