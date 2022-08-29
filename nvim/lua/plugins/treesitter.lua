@@ -4,6 +4,7 @@ function M.run(use)
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'andymass/vim-matchup',
+    'RRethy/nvim-treesitter-endwise',
     'windwp/nvim-ts-autotag',
     'p00f/nvim-ts-rainbow',
     'JoosepAlviste/nvim-ts-context-commentstring',
@@ -28,8 +29,16 @@ function M.run(use)
         -- ensure_installed = "all",
         -- ignore_install = { "swift", "phpdoc" },
 
+        auto_install = true,
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = false,
+        },
         highlight = {
           enable = true, -- false will disable the whole extension
+        },
+        endwise = {
+          enable = true,
         },
         autotag = {
           enable = true,
