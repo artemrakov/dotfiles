@@ -26,7 +26,7 @@ function M.run(use)
       'kosayoda/nvim-lightbulb',
     },
     config = function()
-      local opts = { noremap=true, silent=true }
+      local opts = { noremap = true, silent = true }
       vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -40,7 +40,7 @@ function M.run(use)
 
         -- Mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -78,6 +78,34 @@ function M.run(use)
         }
       end
     end
+  }
+
+  use 'mhartington/formatter.nvim'
+  local util = require "formatter.util"
+
+  -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+  require("formatter").setup {
+    logging = false,
+    filetype = {
+      -- Formatter configurations for filetype "lua" go here
+      -- and will be executed in order
+      lua = {
+        -- "formatter.filetypes.lua" defines default configurations for the
+        -- "lua" filetype
+        require("formatter.filetypes.lua").stylua,
+      },
+      elixir = {
+        require("formatter.filetypes.lua").mixformat,
+      },
+
+      -- Use the special "*" filetype for defining formatter configurations on
+      -- any filetype
+      ["*"] = {
+        -- "formatter.filetypes.any" defines default configurations for any
+        -- filetype
+        require("formatter.filetypes.any").remove_trailing_whitespace
+      }
+    }
   }
 end
 

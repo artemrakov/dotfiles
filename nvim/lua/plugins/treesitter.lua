@@ -8,6 +8,7 @@ function M.run(use)
     'windwp/nvim-ts-autotag',
     'p00f/nvim-ts-rainbow',
     'JoosepAlviste/nvim-ts-context-commentstring',
+
     {
       'nvim-treesitter/nvim-treesitter-context',
       config = function()
@@ -21,21 +22,19 @@ function M.run(use)
     }
   }
 
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function ()
       require('nvim-treesitter.configs').setup {
-        -- ensure_installed = "all",
-        -- ignore_install = { "swift", "phpdoc" },
-
         auto_install = true,
+        highlight = {
+          enable = true, -- false will disable the whole extension
+        },
         context_commentstring = {
           enable = true,
           enable_autocmd = false,
-        },
-        highlight = {
-          enable = true, -- false will disable the whole extension
         },
         endwise = {
           enable = true,
@@ -97,7 +96,6 @@ function M.run(use)
           },
         },
       }
-
     end
   }
 end

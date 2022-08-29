@@ -30,7 +30,7 @@ return require('packer').startup({
       config = function()
         local npairs = require('nvim-autopairs')
         npairs.setup({
-          -- check_ts = true
+          check_ts = true
         })
         -- npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
         -- npairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))
@@ -201,8 +201,6 @@ return require('packer').startup({
 
     use 'slim-template/vim-slim'
     use 'meain/vim-printer'
-
-
 
     require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)

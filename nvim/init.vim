@@ -85,8 +85,6 @@ nnoremap <leader>sh <cmd>Telescope help_tags<cr>
 nnoremap <leader><leader> :NvimTreeToggle<CR>
 nnoremap <C-n> :NvimTreeFindFile<CR>
 
-nnoremap <leader>ff :Format<CR>
-
 nnoremap <leader>S :lua require('spectre').open()<CR>
 
 nnoremap <leader>gb :GitBlameToggle<cr>
