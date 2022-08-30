@@ -1,6 +1,8 @@
 return require('packer').startup({
 
   function(use)
+    require('plugins.treesitter').run(use)
+
     use { 'tpope/vim-sensible' }
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-repeat'
@@ -37,6 +39,7 @@ return require('packer').startup({
         -- npairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
       end
     }
+
     use 'tpope/vim-sleuth'
 
 
@@ -110,11 +113,8 @@ return require('packer').startup({
 
     use {
       'numToStr/Comment.nvim',
-      config = function ()
-        local ts_comment_integration = require('ts_context_commentstring.integrations.comment_nvim')
-        require('Comment').setup({
-          pre_hook = ts_comment_integration.create_pre_hook(),
-        })
+      config = function()
+        require('Comment').setup()
       end
     }
     -- use { 'andymass/vim-matchup' }
@@ -202,7 +202,6 @@ return require('packer').startup({
     use 'slim-template/vim-slim'
     use 'meain/vim-printer'
 
-    require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)
     require('plugins.autocomplete').run(use)
 

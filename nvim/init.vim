@@ -40,8 +40,8 @@ let g:better_whitespace_enabled=1
 let g:gitblame_enabled = 0
 
 
-let g:tokyonight_style = "night"
-colorscheme tokyonight
+" let g:tokyonight_style = "night"
+colorscheme jellybeans-nvim
 
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
