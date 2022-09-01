@@ -12,8 +12,7 @@ return require('packer').startup({
     use 'wincent/replay'
     use 'folke/tokyonight.nvim'
     use 'gelguy/wilder.nvim'
-    use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
-
+    -- use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
 
     use {
       'pocco81/auto-save.nvim',

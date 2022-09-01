@@ -51,9 +51,9 @@ function M.run(use)
             node_decremental = 'grm',
           },
         },
-        -- indent = {
-        --   enable = true,
-        -- },
+        indent = {
+          enable = true,
+        },
         matchup = {
           enable = true
         },
