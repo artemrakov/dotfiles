@@ -93,22 +93,20 @@ keymap("n", "<leader>sr", "<cmd>lua require('telescope.builtin').lsp_references(
 keymap("n", "<leader>so", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", silent)
 keymap("n", "<leader>sa", "<cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>", silent)
 keymap("n", "<leader>sh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", silent)
+
 --
 keymap('n', '<leader><leader>', ':NvimTreeToggle<CR>')
--- nnoremap <leader><leader> :NvimTreeToggle<CR>
 keymap('n', '<C-n>', ':NvimTreeFindFile<CR>')
--- nnoremap <C-n> :NvimTreeFindFile<CR>
---
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 
+-- LuaSnip for snippets
 keymap("i", "<c-y>", "<cmd>lua require'luasnip'.expand_or_jump()<CR>", opts)
 keymap("s", "<c-y>", "<cmd>lua require'luasnip'.expand_or_jump()<CR>", opts)
-
 keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
 keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
 keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
+-- Dropbox
 keymap("n", "<leader>nd", ":e ~/Dropbox<cr>", silent)
 keymap("n", "<leader>nj", ":sp ~/Dropbox/notes/debugging_journal.txt<cr>", silent)
 keymap("n", "<leader>nc", ":sp ~/Dropbox/notes/coding-notes.txt<cr>", silent)
