@@ -27,8 +27,6 @@ return require('packer').startup({
 
 
     use { 'tpope/vim-sensible' }
-    use { 'mfussenegger/nvim-dap' }
-    use { 'theHamsta/nvim-dap-virtual-text' }
 
     use {
       'ThePrimeagen/refactoring.nvim',
@@ -151,7 +149,18 @@ return require('packer').startup({
     use {
       'nvim-telescope/telescope.nvim',
       config = function()
-        require('telescope').setup {
+        local telescope = require('telescope')
+
+        telescope.load_extension('refactoring')
+
+        vim.api.nvim_set_keymap(
+          "v",
+          "<leader>rr",
+          "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+          { noremap = true }
+        )
+
+        telescope.setup {
           defaults = {
             sorting_strategy = "ascending",
             mappings = {
