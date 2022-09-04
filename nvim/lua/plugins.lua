@@ -1,18 +1,43 @@
 return require('packer').startup({
 
   function(use)
-    require('plugins.treesitter').run(use)
+    use { 'wbthomason/packer.nvim' }
+
+    -- speeding up
+    use { 'lewis6991/impatient.nvim' }
+    use { 'nathom/filetype.nvim' }
+    use { 'nvim-lua/plenary.nvim' }
+    use { 'kyazdani42/nvim-web-devicons' }
+
+    use {
+      'm-demare/hlargs.nvim',
+      requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+
+    use { 'LudoPinelli/comment-box.nvim' }
+
+    use {
+      'TimUntersberger/neogit',
+      config = function()
+        local neogit = require('neogit')
+        neogit.setup()
+      end,
+      requires = 'nvim-lua/plenary.nvim'
+    }
+
 
     use { 'tpope/vim-sensible' }
-    use 'f-person/git-blame.nvim'
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-eunuch'
-    use 'jpalardy/vim-slime'
-    use { 'ntpeters/vim-better-whitespace' }
-    use 'wincent/replay'
-    use 'folke/tokyonight.nvim'
-    use 'gelguy/wilder.nvim'
-    -- use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
+    use { 'mfussenegger/nvim-dap' }
+    use { 'theHamsta/nvim-dap-virtual-text' }
+
+    use {
+      'ThePrimeagen/refactoring.nvim',
+      requires = {
+        { 'nvim-lua/plenary.nvim' },
+        { 'nvim-treesitter/nvim-treesitter' }
+      }
+    }
+
 
     use {
       'pocco81/auto-save.nvim',
@@ -53,7 +78,6 @@ return require('packer').startup({
     }
 
     use 'NMAC427/guess-indent.nvim'
-    use 'wbthomason/packer.nvim'
     -- use 'lukas-reineke/indent-blankline.nvim'
     -- use {
     --   'windwp/windline.nvim',
@@ -84,10 +108,15 @@ return require('packer').startup({
 
     use 'tpope/vim-surround'
     use 'windwp/nvim-spectre'
+    use 'tpope/vim-repeat'
+    use 'tpope/vim-eunuch'
+    use 'jpalardy/vim-slime'
+    use { 'ntpeters/vim-better-whitespace' }
+    use 'wincent/replay'
+    use 'folke/tokyonight.nvim'
+    use 'gelguy/wilder.nvim'
+
     use 'dyng/ctrlsf.vim'
-    use {
-      'marko-cerovac/material.nvim'
-    }
     use { 'rktjmp/lush.nvim' }
     use { 'metalelf0/jellybeans-nvim' }
 
@@ -118,6 +147,7 @@ return require('packer').startup({
     }
     -- use { 'andymass/vim-matchup' }
 
+    -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
       'nvim-telescope/telescope.nvim',
       config = function()
@@ -141,7 +171,6 @@ return require('packer').startup({
       end,
       requires = { 'nvim-lua/plenary.nvim' }
     }
-    use 'b0o/schemastore.nvim'
 
     use {
       'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
@@ -181,26 +210,17 @@ return require('packer').startup({
       end
     }
 
-    use {
-      'notjedi/nvim-rooter.lua',
-      config = function() require 'nvim-rooter'.setup() end
-    }
-
     use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
     })
 
 
-
-    -- use {
-    --   "beauwilliams/focus.nvim",
-    --   config = function() require("focus").setup() end
-    -- }
-
     use 'slim-template/vim-slim'
     use 'meain/vim-printer'
 
+
+    require('plugins.treesitter').run(use)
     require('plugins.lsp').run(use)
     require('plugins.autocomplete').run(use)
 
