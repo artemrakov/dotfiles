@@ -39,14 +39,9 @@ keymap("v", ">", ">gv", silent)
 keymap("n", "gn", ":bn<CR>", silent)
 keymap("n", "gp", ":bp<CR>", silent)
 
--- Don't yank on delete char
-keymap("n", "x", '"_x', silent)
-keymap("n", "X", '"_X', silent)
-keymap("v", "x", '"_x', silent)
-keymap("v", "X", '"_X', silent)
-
 -- Don't yank on visual paste
 keymap("v", "p", '"_dP', silent)
+
 
 -- Quickfix
 -- keymap("n", "<leader>,", ":cp<CR>", silent)

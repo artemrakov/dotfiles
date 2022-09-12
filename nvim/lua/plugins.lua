@@ -15,6 +15,12 @@ return require('packer').startup({
     }
 
     use { 'LudoPinelli/comment-box.nvim' }
+    use {
+      'phaazon/hop.nvim',
+      config = function()
+        require 'hop'.setup()
+      end
+    }
 
     use {
       'TimUntersberger/neogit',
@@ -36,45 +42,16 @@ return require('packer').startup({
       }
     }
 
-
     use {
-      'pocco81/auto-save.nvim',
+      'nvim-zh/auto-save.nvim',
       config = function()
         local autosave = require("auto-save")
         autosave.setup()
       end
     }
 
-    use {
-      'windwp/nvim-autopairs',
-      requires = {
-        'hrsh7th/nvim-cmp',
-        'nvim-treesitter/nvim-treesitter',
-      },
-      config = function()
-        local npairs = require('nvim-autopairs')
-        npairs.setup({
-          check_ts = true
-        })
-        -- npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
-        -- npairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))
-        -- npairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
-      end
-    }
 
     use 'tpope/vim-sleuth'
-
-
-    use { "ellisonleao/glow.nvim" }
-    -- anotations
-    use {
-      "danymat/neogen",
-      config = function()
-        require('neogen').setup {}
-      end,
-      requires = "nvim-treesitter/nvim-treesitter",
-    }
-
     use 'NMAC427/guess-indent.nvim'
     -- use 'lukas-reineke/indent-blankline.nvim'
     -- use {
@@ -145,13 +122,14 @@ return require('packer').startup({
     }
     -- use { 'andymass/vim-matchup' }
 
-    -- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
       'nvim-telescope/telescope.nvim',
       config = function()
         local telescope = require('telescope')
 
         telescope.load_extension('refactoring')
+        telescope.load_extension('fzf')
 
         vim.api.nvim_set_keymap(
           "v",

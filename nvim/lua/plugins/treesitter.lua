@@ -12,7 +12,7 @@ function M.run(use)
     {
       'nvim-treesitter/nvim-treesitter-context',
       config = function()
-        require'treesitter-context'.setup {
+        require 'treesitter-context'.setup {
           separator = '-'
         }
       end
@@ -22,11 +22,30 @@ function M.run(use)
     }
   }
 
+  use {
+    'windwp/nvim-autopairs',
+    requires = {
+      'hrsh7th/nvim-cmp',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      local npairs = require('nvim-autopairs')
+      npairs.setup({
+        check_ts = true
+      })
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      local cmp = require('cmp')
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
+    end
+  }
 
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function ()
+    config = function()
       require('nvim-treesitter.configs').setup {
         auto_install = true,
         highlight = {
@@ -51,9 +70,9 @@ function M.run(use)
             node_decremental = 'grm',
           },
         },
-        -- indent = {
-        --   enable = true,
-        -- },
+        indent = {
+          enable = true,
+        },
         matchup = {
           enable = true
         },
@@ -63,6 +82,23 @@ function M.run(use)
           max_file_lines = 1000,
         },
         textobjects = {
+          swap = {
+            enable = true,
+            swap_next = {
+              ["<leader>a"] = "@parameter.inner",
+            },
+            swap_previous = {
+              ["<leader>A"] = "@parameter.inner",
+            },
+          },
+          lsp_interop = {
+            enable = true,
+            border = 'none',
+            peek_definition_code = {
+              ["<leader>df"] = "@function.outer",
+              ["<leader>dF"] = "@class.outer",
+            },
+          },
           select = {
             enable = true,
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
