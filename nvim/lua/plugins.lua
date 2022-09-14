@@ -47,7 +47,7 @@ return require('packer').startup({
       config = function() require('lualine').setup({
           options = {
             icons_enabled = false,
-            theme = 'gruvbox-material',
+            -- theme = 'gruvbox-material',
             globalstatus = true,
             section_separators = { left = '', right = '' },
             component_separators = { left = '|', right = '|' },
@@ -76,6 +76,8 @@ return require('packer').startup({
     use 'dyng/ctrlsf.vim'
     use { 'rktjmp/lush.nvim' }
     use { 'metalelf0/jellybeans-nvim' }
+    use { "catppuccin/nvim", as = "catppuccin" }
+
 
     use 'AndrewRadev/splitjoin.vim'
 
