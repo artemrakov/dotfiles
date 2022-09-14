@@ -4,6 +4,7 @@ function M.run(use)
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'andymass/vim-matchup',
+    'm-demare/hlargs.nvim',
     'RRethy/nvim-treesitter-endwise',
     'windwp/nvim-ts-autotag',
     'p00f/nvim-ts-rainbow',
@@ -21,6 +22,14 @@ function M.run(use)
       'nvim-treesitter/nvim-treesitter',
     }
   }
+
+  -- use {
+  --   'ThePrimeagen/refactoring.nvim',
+  --   requires = {
+  --     { 'nvim-lua/plenary.nvim' },
+  --     { 'nvim-treesitter/nvim-treesitter' }
+  --   }
+  -- }
 
   use {
     'windwp/nvim-autopairs',

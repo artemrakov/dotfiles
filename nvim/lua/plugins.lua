@@ -9,39 +9,24 @@ return require('packer').startup({
     use { 'nvim-lua/plenary.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
 
-    use {
-      'm-demare/hlargs.nvim',
-      requires = { 'nvim-treesitter/nvim-treesitter' }
-    }
+    -- use { 'LudoPinelli/comment-box.nvim' }
+    -- use {
+    --   'phaazon/hop.nvim',
+    --   config = function()
+    --     require 'hop'.setup()
+    --   end
+    -- }
 
-    use { 'LudoPinelli/comment-box.nvim' }
-    use {
-      'phaazon/hop.nvim',
-      config = function()
-        require 'hop'.setup()
-      end
-    }
-
-    use {
-      'TimUntersberger/neogit',
-      config = function()
-        local neogit = require('neogit')
-        neogit.setup()
-      end,
-      requires = 'nvim-lua/plenary.nvim'
-    }
-
+    -- use {
+    --   'TimUntersberger/neogit',
+    --   config = function()
+    --     local neogit = require('neogit')
+    --     neogit.setup()
+    --   end,
+    --   requires = 'nvim-lua/plenary.nvim'
+    -- }
 
     use { 'tpope/vim-sensible' }
-
-    use {
-      'ThePrimeagen/refactoring.nvim',
-      requires = {
-        { 'nvim-lua/plenary.nvim' },
-        { 'nvim-treesitter/nvim-treesitter' }
-      }
-    }
-
     use {
       'nvim-zh/auto-save.nvim',
       config = function()
@@ -49,7 +34,6 @@ return require('packer').startup({
         autosave.setup()
       end
     }
-
 
     use 'tpope/vim-sleuth'
     use 'NMAC427/guess-indent.nvim'
@@ -85,11 +69,9 @@ return require('packer').startup({
     use 'windwp/nvim-spectre'
     use 'tpope/vim-repeat'
     use 'tpope/vim-eunuch'
-    use 'jpalardy/vim-slime'
-    use { 'ntpeters/vim-better-whitespace' }
+    use 'ntpeters/vim-better-whitespace'
     use 'wincent/replay'
     use 'folke/tokyonight.nvim'
-    use 'gelguy/wilder.nvim'
 
     use 'dyng/ctrlsf.vim'
     use { 'rktjmp/lush.nvim' }
@@ -97,22 +79,6 @@ return require('packer').startup({
 
     use 'AndrewRadev/splitjoin.vim'
 
-    -- Rails
-    use 'tpope/vim-rails'
-    -- End
-    -- Clojure
-
-    use 'tpope/vim-dispatch'
-    use 'clojure-vim/vim-jack-in'
-    use 'radenling/vim-dispatch-neovim'
-    use 'Olical/conjure'
-    use 'guns/vim-sexp'
-    use 'tpope/vim-sexp-mappings-for-regular-people'
-    use 'clojure-vim/clojure.vim'
-
-    -- End
-
-    use { 'tpope/vim-unimpaired' }
 
     use {
       'numToStr/Comment.nvim',
@@ -120,7 +86,11 @@ return require('packer').startup({
         require('Comment').setup()
       end
     }
-    -- use { 'andymass/vim-matchup' }
+
+    require('plugins.treesitter').run(use)
+    require('plugins.lsp').run(use)
+    require('plugins.autocomplete').run(use)
+    require('plugins.specific').run(use)
 
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
@@ -128,15 +98,8 @@ return require('packer').startup({
       config = function()
         local telescope = require('telescope')
 
-        telescope.load_extension('refactoring')
+        -- telescope.load_extension('refactoring')
         telescope.load_extension('fzf')
-
-        vim.api.nvim_set_keymap(
-          "v",
-          "<leader>rr",
-          "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-          { noremap = true }
-        )
 
         telescope.setup {
           defaults = {
@@ -194,27 +157,6 @@ return require('packer').startup({
       requires = { 'kyazdani42/nvim-web-devicons' },
       config = function()
         require 'alpha'.setup(require 'alpha.themes.startify'.config)
-      end
-    }
-
-    use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-    })
-
-
-    use 'slim-template/vim-slim'
-    use 'meain/vim-printer'
-
-
-    require('plugins.treesitter').run(use)
-    require('plugins.lsp').run(use)
-    require('plugins.autocomplete').run(use)
-
-    use {
-      'williamboman/mason.nvim',
-      config = function()
-        require("mason").setup()
       end
     }
 
