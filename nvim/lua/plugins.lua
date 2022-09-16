@@ -76,8 +76,6 @@ return require('packer').startup({
     use 'dyng/ctrlsf.vim'
     use { 'rktjmp/lush.nvim' }
     use { 'metalelf0/jellybeans-nvim' }
-    use { "catppuccin/nvim", as = "catppuccin" }
-
 
     use 'AndrewRadev/splitjoin.vim'
 
@@ -153,6 +151,11 @@ return require('packer').startup({
         })
       end
     }
+
+    -- with relative path
+    require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. file.fname) end)
+    -- with absolute path
+    require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. vim.fn.fnamemodify(file.fname, ":p")) end)
 
     use {
       'goolord/alpha-nvim',
