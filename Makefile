@@ -20,14 +20,11 @@ nvim-install:
 	ln -snf $(PWD)/nvim ~/.config/nvim
 
 macos-prepare:
-	brew install neovim git the_silver_searcher fzf bat htop fd ncdu tldr httpie git-delta ripgrep gnu-sed pure
+	brew install neovim git the_silver_searcher fzf bat htop fd ncdu tldr httpie git-delta ripgrep gnu-sed tmux asdf
 
 deps-pip:
 	python3 -m pip install --user --upgrade pynvim
 	python2 -m pip install --user --upgrade pynvim
-
-install-asdf:
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
 
 install-ruby:
 	asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git

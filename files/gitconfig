@@ -11,8 +11,8 @@
 
 [core]
   pager = delta
-	editor = nvim
-	excludesFile = ~/.gitignore
+  editor = nvim
+  excludesFile = ~/.gitignore
 
 [interactive]
     diffFilter = delta --color-only
@@ -57,7 +57,7 @@
   autocorrect = 1
 
 [push]
-	default = simple
+  default = simple
 
 [branch "master"]
   mergeoptions = --no-edit
@@ -66,14 +66,14 @@
   mergeoptions = --no-edit
 
 [user]
-	email = artem@rakov.me
-	name = Artem Rakov
+  email = artem@rakov.me
+  name = Artem Rakov
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 [pull]
-	ff = only
+  ff = only
 [init]
-	defaultBranch = main
+  defaultBranch = main
