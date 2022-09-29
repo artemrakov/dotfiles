@@ -66,8 +66,7 @@
   mergeoptions = --no-edit
 
 [user]
-  email = artem@rakov.me
-  name = Artem Rakov
+	name = Artem Rakov
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f

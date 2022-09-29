@@ -5,3 +5,18 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias r="rails"
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+alias odin="ssh -fNL 2009:127.0.0.1:2009 dev-dsk-litn-cdd-2c-2433841d.us-west-2.amazon.com"
+alias bb="brazil-build"
+alias bbb="brazil-build build"
+alias bbc="brazil-build clean"
+alias bbr="brazil-build release"
+alias bbs="brazil-build server"
+alias bbcr="brazil-build clean && brazil-build release"
+alias bbcs="brazil-build clean && brazil-build server"
+alias bbcrap="brazil-build clean && brazil-build release && brazil-build apollo-pkg"
+
+alias h="cd ~/"
+alias a="cd /apollo/env/"
+alias k="kinit -f"
+alias m="mwinit"

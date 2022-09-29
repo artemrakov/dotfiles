@@ -26,6 +26,7 @@ export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 export BUNDLER_EDITOR="nvim"
 export EDITOR="nvim"
 export ERL_AFLAGS="-kernel shell_history enabled"
+export PATH=$PATH:$HOME/.toolbox/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -45,3 +46,4 @@ zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 [ -f "/Users/arakov/.ghcup/env" ] && source "/Users/arakov/.ghcup/env" # ghcup-env
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-18.jdk/Contents/Home"

@@ -8,7 +8,6 @@ function M.run(use)
       'neovim/nvim-lspconfig',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
     },
@@ -62,8 +61,6 @@ function M.run(use)
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'buffer' },
-          { name = 'cmdline' },
-          { name = 'path' },
         },
       }
     end,
