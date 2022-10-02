@@ -32,6 +32,11 @@ function M.run(use)
   -- }
 
   use {
+    'echasnovski/mini.nvim',
+    config = function() require('mini.ai').setup() end
+  }
+
+  use {
     'windwp/nvim-autopairs',
     requires = {
       'hrsh7th/nvim-cmp',
