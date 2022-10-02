@@ -46,4 +46,3 @@ zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 [ -f "/Users/arakov/.ghcup/env" ] && source "/Users/arakov/.ghcup/env" # ghcup-env
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-18.jdk/Contents/Home"

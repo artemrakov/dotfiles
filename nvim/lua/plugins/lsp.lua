@@ -7,6 +7,7 @@ function M.run(use)
     'solargraph',
     'sumneko_lua',
     'elixirls',
+    'jdtls'
   }
 
   use {
@@ -108,6 +109,13 @@ function M.run(use)
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' }
   }
+
+  require("null-ls").setup({
+    sources = {
+      require("null-ls").builtins.formatting.markdownlint, -- markdown formatting
+      require("null-ls").builtins.formatting.npm_groovy_lint,
+    },
+  })
 end
 
 return M
