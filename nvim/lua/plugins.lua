@@ -69,6 +69,7 @@ return require('packer').startup({
     use 'windwp/nvim-spectre'
     use 'tpope/vim-repeat'
     use 'tpope/vim-eunuch'
+    use 'tpope/vim-unimpaired'
     use 'ntpeters/vim-better-whitespace'
     use 'wincent/replay'
     use 'folke/tokyonight.nvim'
