@@ -65,7 +65,17 @@ return require('packer').startup({
       end
     }
 
-    use 'tpope/vim-surround'
+    -- Use a single character as an alias for several text-objects
+    -- E.g. q is aliased to `,',", so csqb replaces the nearest set of quotes with parentheses
+    use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+        require("nvim-surround").setup({
+          -- Configuration here, or leave empty to use defaults
+        })
+      end
+    })
     use 'windwp/nvim-spectre'
     use 'tpope/vim-repeat'
     use 'tpope/vim-eunuch'
