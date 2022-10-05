@@ -7,7 +7,7 @@ M.servers = {
   'solargraph',
   'sumneko_lua',
   'jsonls',
-  'elixirls'
+  'elixirls',
 }
 
 M.setup = function()
