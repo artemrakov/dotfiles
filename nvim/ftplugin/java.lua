@@ -1,5 +1,5 @@
 local jdtls = require("jdtls")
-local on_attach = require("plugins.on-attach-lsp")
+local on_attach = require('lsp.on_attach')
 
 local root_dir = require("jdtls.setup").find_root({ "packageInfo" }, "Config")
 local home = os.getenv("HOME")

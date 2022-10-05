@@ -99,7 +99,6 @@ return require('packer').startup({
     }
 
     require('plugins.treesitter').run(use)
-    require('plugins.lsp').run(use)
     require('plugins.autocomplete').run(use)
     require('plugins.specific').run(use)
 
@@ -168,6 +167,46 @@ return require('packer').startup({
     require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. file.fname) end)
     -- with absolute path
     require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. vim.fn.fnamemodify(file.fname, ":p")) end)
+
+
+
+  use 'mfussenegger/nvim-jdtls'
+
+  use {
+    'williamboman/mason-lspconfig.nvim',
+     requires = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
+    config = function()
+      local lsp = require('lsp')
+      require('mason').setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = lsp.servers
+      })
+    end
+  }
+
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   requires = {
+  --     'williamboman/mason.nvim',
+  --     'williamboman/mason-lspconfig.nvim',
+  --     'kosayoda/nvim-lightbulb',
+  --   },
+  --   config = function()
+  -- }
+  use { "WhoIsSethDaniel/mason-tool-installer.nvim", requires = { "williamboman/mason.nvim" },
+    config = function()
+      local tools = require('lsp.servers.nullls')
+      require 'mason-tool-installer'.setup {
+        ensure_installed = tools.list,
+        run_on_start = true,
+        start_delay = 2000, -- 3 second delay
+      }
+    end }
+
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' }
+  }
 
     use {
       'goolord/alpha-nvim',

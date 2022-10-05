@@ -5,3 +5,5 @@
 .lsp/
 .nrepl-port
 node_modules/
+.factorypath
+.project

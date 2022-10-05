@@ -1,8 +1,10 @@
 pcall(require, 'impatient')
 
+require("globals")
 require('functions')
 require('settings')
 require('autocmds')
 require('plugins')
+require("lsp").setup()
 require('colorscheme')
 require('keymappings')
