@@ -27,7 +27,6 @@ export BUNDLER_EDITOR="nvim"
 export EDITOR="nvim"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=$PATH:$HOME/.toolbox/bin
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-18.jdk/Contents/Home"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

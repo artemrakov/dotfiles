@@ -17,17 +17,43 @@ if root_dir then
 end
 
 local config = {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    jdtls.setup.add_commands()
+  end,
   cmd = {
     "jdtls", -- need to be on your PATH
     "--jvm-arg=-javaagent:" .. home .. "/Developer/lombok.jar", -- need for lombok magic
-    "-data",
-    eclipse_workspace,
+    "--add-modules=ALL-SYSTEM",
+    '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+    '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+    "-data", eclipse_workspace,
   },
   root_dir = root_dir,
   init_options = {
     workspaceFolders = ws_folders_jdtls,
+    extendedClientCapabilities = {
+      classFileContentsSupport = true
+    }
   },
+  settings = {
+    java = {
+      sources = {
+        organizeImports = {
+          starThreshold = 9999,
+          staticStarThreshold = 9999,
+        },
+      },
+      configuration = {
+        runtimes = {
+          {
+            name = "JavaSE-11",
+            path = "/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home"
+          }
+        }
+      }
+    }
+  }
 }
 
 jdtls.start_or_attach(config)
