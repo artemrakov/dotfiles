@@ -24,17 +24,34 @@ local config = {
   cmd = {
     "jdtls", -- need to be on your PATH
     "--jvm-arg=-javaagent:" .. home .. "/Developer/lombok.jar", -- need for lombok magic
-    "--add-modules=ALL-SYSTEM",
-    '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-    '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-    "-data", eclipse_workspace,
+    "-data",
+    eclipse_workspace,
   },
+  -- cmd = {
+  --   "java",
+  --   "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+  --   "-Dosgi.bundles.defaultStartLevel=4",
+  --   "-Declipse.product=org.eclipse.jdt.ls.core.product",
+  --   "-Dlog.protocol=true",
+  --   "-Dlog.level=ALL",
+  --   "-Xms1g",
+  --   "-Xmx2G",
+  --   "-javaagent:" .. lombok_jar,
+  --   "-Xbootclasspath/a:" .. lombok_jar,
+  --   "-jar",
+  --   "/Library/Java/jdt-language-server-1.5.0-202110191539/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+  --   "-configuration", "/Library/Java/jdt-language-server-1.5.0-202110191539/config_mac",
+  --   "-data", eclipse_workspace,
+  --   "--add-modules=ALL-SYSTEM",
+  --   "--add-opens", "java.base/java.util=ALL-UNNAMED",
+  --   "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+  -- },
   root_dir = root_dir,
   init_options = {
     workspaceFolders = ws_folders_jdtls,
-    extendedClientCapabilities = {
-      classFileContentsSupport = true
-    }
+    -- extendedClientCapabilities = {
+    --   classFileContentsSupport = true
+    -- }
   },
   settings = {
     java = {
@@ -44,14 +61,6 @@ local config = {
           staticStarThreshold = 9999,
         },
       },
-      configuration = {
-        runtimes = {
-          {
-            name = "JavaSE-11",
-            path = "/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home"
-          }
-        }
-      }
     }
   }
 }

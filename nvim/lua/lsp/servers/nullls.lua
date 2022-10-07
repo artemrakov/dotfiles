@@ -19,7 +19,6 @@ M.setup = function()
     sources = {
       formatting.prettierd,
       formatting.fixjson,
-      formatting.npm_groovy_lint,
 
       diagnostics.eslint_d.with({ timeout = 10000 }),
       diagnostics.yamllint,

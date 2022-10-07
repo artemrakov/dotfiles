@@ -2,6 +2,7 @@ return function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     local options = { noremap = true, silent = true }
 
+    map('n', '<space>e', vim.diagnostic.open_float, options)
     map('n', 'K', function() vim.lsp.buf.hover() end, options)
     map('i', '<c-k>', function() vim.lsp.buf.signature_help() end, options)
     map('n', '\'gr', function()
