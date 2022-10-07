@@ -26,6 +26,7 @@ return require('packer').startup({
     --   requires = 'nvim-lua/plenary.nvim'
     -- }
 
+    use 'tpope/vim-projectionist'
     use { 'tpope/vim-sensible' }
     use {
       'nvim-zh/auto-save.nvim',

@@ -7,3 +7,4 @@
 node_modules/
 .factorypath
 .project
+.projections.json
