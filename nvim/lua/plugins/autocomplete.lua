@@ -16,7 +16,6 @@ function M.run(use)
       local luasnip = require 'luasnip'
 
       require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
-      require("luasnip.loaders.from_vscode").load()
 
       -- nvim-cmp setup
       local cmp = require 'cmp'
@@ -103,7 +102,12 @@ function M.run(use)
   use {
     'rafamadriz/friendly-snippets',
     requires = { 'hrsh7th/nvim-cmp' },
+    config = function()
+      require("luasnip.loaders.from_vscode").load()
+      require 'luasnip'.filetype_extend("ruby", { "rails" })
+    end
   }
+
 
   -- nvim-cmp supports additional completion capabilities
   local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -20,7 +20,7 @@ nvim-install:
 	ln -snf $(PWD)/nvim ~/.config/nvim
 
 macos-prepare:
-	brew install neovim git the_silver_searcher fzf bat htop fd ncdu tldr httpie git-delta ripgrep gnu-sed tmux asdf
+	brew install neovim git the_silver_searcher fzf bat htop fd ncdu tldr httpie git-delta ripgrep gnu-sed tmux asdf yamlint
 
 deps-pip:
 	python3 -m pip install --user --upgrade pynvim
@@ -60,3 +60,4 @@ deps-npm:
 	npm install -g stylelint stylelint-config-recommended stylelint-config-standard
 	npm install -g yaml-language-server markdownlint bash-language-server
 	npm install -g dockerfile-language-server-nodejs
+	npm install -g fixjson
