@@ -102,6 +102,9 @@ bind("n", "<leader>nc", ":sp ~/Dropbox/notes/coding-notes.txt<cr>", silent)
 bind("n", "<leader>nn", ":sp ~/Dropbox/notes/programming_notes.txt<cr>", silent)
 bind("n", "<leader>np", ":sp ~/Dropbox/work/shogun/project-notes.md<cr>", silent)
 
+bind("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", silent)
+bind("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", silent)
+
 -- Comment Box
 -- bind("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", opts)
 -- bind("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", opts)

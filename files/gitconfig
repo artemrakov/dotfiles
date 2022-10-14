@@ -67,7 +67,7 @@
 
 [user]
 	name = Artem Rakov
-	email = artem@rakov.me
+	email = arakov@amazon.com
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f

@@ -243,6 +243,13 @@ return require('packer').startup({
       config = require('plugins.alpha-nvim')
     }
 
+    use {
+      'ggandor/leap.nvim',
+      config = function ()
+        require('leap').add_default_mappings()
+      end
+    }
+
   end,
   config = {
     enable = true,

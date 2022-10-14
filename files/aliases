@@ -7,6 +7,7 @@ alias r="rails"
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
 alias odin="ssh -fNL 2009:127.0.0.1:2009 dev-dsk-litn-cdd-2c-2433841d.us-west-2.amazon.com"
+alias bws='brazil ws sync'
 alias bb="brazil-build"
 alias bbb="brazil-build build"
 alias bbc="brazil-build clean"
