@@ -220,15 +220,15 @@ return require('packer').startup({
       end
     }
 
-    use { "WhoIsSethDaniel/mason-tool-installer.nvim", requires = { "williamboman/mason.nvim" },
-      config = function()
-        local tools = require('lsp.servers.nullls')
-        require 'mason-tool-installer'.setup {
-          ensure_installed = tools.list,
-          run_on_start = true,
-          start_delay = 2000, -- 3 second delay
-        }
-      end }
+    -- use { "WhoIsSethDaniel/mason-tool-installer.nvim", requires = { "williamboman/mason.nvim" },
+    --   config = function()
+    --     local tools = require('lsp.servers.nullls')
+    --     require 'mason-tool-installer'.setup {
+    --       ensure_installed = tools.list,
+    --       run_on_start = true,
+    --       start_delay = 2000, -- 3 second delay
+    --     }
+    --   end }
 
     use 'mfussenegger/nvim-jdtls'
 

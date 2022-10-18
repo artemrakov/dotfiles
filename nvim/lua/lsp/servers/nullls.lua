@@ -6,6 +6,7 @@ M.list = {
   'cspell',
   'proselint',
   'yamllint',
+  'cfn_lint'
 }
 
 M.setup = function()
@@ -22,6 +23,7 @@ M.setup = function()
 
       diagnostics.eslint_d.with({ timeout = 10000 }),
       diagnostics.yamllint,
+      diagnostics.cfn_lint,
       diagnostics.markdownlint,
       diagnostics.proselint.with({ extra_filetypes = { 'markdown', 'octo' } }),
       diagnostics.cspell.with({
