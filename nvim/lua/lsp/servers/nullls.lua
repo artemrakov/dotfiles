@@ -32,6 +32,7 @@ M.setup = function()
           diagnostic.severity = vim.diagnostic.severity['WARN']
         end
       }),
+
       code_actions.eslint_d,
     },
     on_attach = general_on_attach
