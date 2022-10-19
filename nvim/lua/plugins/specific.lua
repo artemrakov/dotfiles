@@ -18,6 +18,21 @@ function M.run(use)
   -- use 'tpope/vim-sexp-mappings-for-regular-people'
   -- use 'clojure-vim/clojure.vim'
   -- use 'tpope/vim-unimpaired'
+
+  use {
+    "mhanberg/elixir.nvim",
+    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    config = function()
+      local general_on_attach = require('lsp.on_attach')
+      local serverConfig = require('lsp.servers.elixirls')(general_on_attach)
+
+      require("elixir").setup({
+        on_attach = serverConfig.on_attach
+      })
+    end
+  }
+
+
 end
 
 return M

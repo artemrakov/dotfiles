@@ -101,7 +101,6 @@ return require('packer').startup({
 
     require('plugins.treesitter').run(use)
     require('plugins.autocomplete').run(use)
-    require('plugins.specific').run(use)
 
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
@@ -250,6 +249,7 @@ return require('packer').startup({
       end
     }
 
+    require('plugins.specific').run(use)
   end,
   config = {
     enable = true,
