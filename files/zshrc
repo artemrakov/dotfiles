@@ -27,6 +27,7 @@ export BUNDLER_EDITOR="nvim"
 export EDITOR="nvim"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=$PATH:$HOME/.toolbox/bin
+source "$HOME/.cargo/env"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

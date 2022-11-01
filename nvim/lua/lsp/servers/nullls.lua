@@ -4,7 +4,7 @@ M.list = {
   'eslint_d',
   'prettierd',
   'cspell',
-  'proselint',
+  -- 'proselint',
   'yamllint',
   'cfn_lint'
 }
@@ -24,8 +24,8 @@ M.setup = function()
       diagnostics.eslint_d.with({ timeout = 10000 }),
       diagnostics.yamllint,
       diagnostics.cfn_lint,
-      diagnostics.markdownlint,
-      diagnostics.proselint.with({ extra_filetypes = { 'markdown', 'octo' } }),
+      -- diagnostics.markdownlint,
+      -- diagnostics.proselint.with({ extra_filetypes = { 'markdown', 'octo' } }),
       diagnostics.cspell.with({
         extra_filetypes = { 'octo' },
         diagnostics_postprocess = function(diagnostic)
