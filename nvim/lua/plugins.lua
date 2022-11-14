@@ -28,14 +28,15 @@ return require('packer').startup({
 
     use 'tpope/vim-projectionist'
     use { 'tpope/vim-sensible' }
-    use {
-      'nvim-zh/auto-save.nvim',
+    use({
+      "Pocco81/auto-save.nvim",
       config = function()
-        local autosave = require("auto-save")
-        autosave.setup()
-      end
-    }
-
+        require("auto-save").setup {
+          -- your config goes here
+          -- or just leave it empty :)
+        }
+      end,
+    })
     use 'tpope/vim-sleuth'
     use 'NMAC427/guess-indent.nvim'
     -- use 'lukas-reineke/indent-blankline.nvim'
@@ -90,7 +91,6 @@ return require('packer').startup({
     use { 'metalelf0/jellybeans-nvim' }
 
     use 'AndrewRadev/splitjoin.vim'
-
 
     use {
       'numToStr/Comment.nvim',
@@ -244,7 +244,7 @@ return require('packer').startup({
 
     use {
       'ggandor/leap.nvim',
-      config = function ()
+      config = function()
         require('leap').add_default_mappings()
       end
     }

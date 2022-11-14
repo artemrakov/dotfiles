@@ -4,7 +4,7 @@ local M = {}
 
 M.servers = {
   'tsserver',
-  'solargraph',
+  -- 'solargraph',
   'sumneko_lua',
   'jsonls',
   'elixirls',
@@ -23,25 +23,25 @@ M.setup = function()
     require('lspconfig')[serverName].setup(serverConfig)
   end
 
-  -- local lspconfig = require('lspconfig')
-  -- local configs = require 'lspconfig.configs'
-  -- if not configs.barium then
-  --   configs.barium = {
-  --     default_config = {
-  --       cmd = { 'barium' };
-  --       filetypes = { 'brazil-config' };
-  --       root_dir = function(fname)
-  --         return lspconfig.util.find_git_ancestor(fname)
-  --       end;
-  --       settings = {};
-  --     };
-  --   }
-  -- end
-  --
-  -- lspconfig.barium.setup {
-  --   on_attach = general_on_attach,
-  --   capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- }
+  local lspconfig = require('lspconfig')
+  local configs = require 'lspconfig.configs'
+  if not configs.barium then
+    configs.barium = {
+      default_config = {
+        cmd = { 'barium' };
+        filetypes = { 'brazil-config' };
+        root_dir = function(fname)
+          return lspconfig.util.find_git_ancestor(fname)
+        end;
+        settings = {};
+      };
+    }
+  end
+
+  lspconfig.barium.setup {
+    on_attach = general_on_attach,
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+  }
 end
 
 return M

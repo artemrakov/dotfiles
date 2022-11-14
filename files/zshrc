@@ -10,7 +10,7 @@ plugins=(fzf git vi-mode gcloud kubectl kube-ps1 gitfast last-working-dir common
 source "${ZSH}/oh-my-zsh.sh"
 
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
-
+fpath+=~/.zfunc
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs

@@ -44,9 +44,7 @@ function M.run(use)
     },
     config = function()
       local npairs = require('nvim-autopairs')
-      npairs.setup({
-        check_ts = true
-      })
+      npairs.setup({})
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
       local cmp = require('cmp')
       cmp.event:on(
