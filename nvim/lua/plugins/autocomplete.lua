@@ -84,33 +84,7 @@ function M.run(use)
   use {
     'mfussenegger/nvim-dap',
     config = function()
-      local dap = require('dap')
       vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
-
-      function attach_to_debug()
-        dap.configurations.java = {
-          {
-            type = 'java';
-            request = 'attach';
-            name = "Attach to the process";
-            hostName = 'localhost';
-            port = '5050';
-          },
-        }
-        dap.continue()
-      end
-
-      -- key_mapping --
-      local key_map = function(mode, key, result)
-        vim.api.nvim_set_keymap(
-          mode,
-          key,
-          result,
-          { noremap = true, silent = true }
-        )
-      end
-
-      key_map('n', '<leader>da', ':lua attach_to_debug()<CR>')
     end
   }
   use 'rcarriga/cmp-dap'
