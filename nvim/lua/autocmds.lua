@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", 
 
 vim.cmd [[
   au BufReadPost,BufNewFile Config setf brazil-config
+
   augroup myfiletypes
     " Clear old autocmds in group
     autocmd!

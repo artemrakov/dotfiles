@@ -4,6 +4,7 @@ local on_attach = require("lsp.on_attach")
 local root_dir = require("jdtls.setup").find_root({ "packageInfo" }, "Config")
 local home = os.getenv("HOME")
 local eclipse_workspace = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local path_to_java_dap = home .. "/Developer/java-debug"
 
 local ws_folders_jdtls = {}
 if root_dir then
@@ -20,6 +21,7 @@ local config = {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     jdtls.setup.add_commands()
+    jdtls.setup_dap({ hotcodereplace = 'auto' })
   end,
   cmd = {
     "jdtls", -- need to be on your PATH
@@ -49,6 +51,10 @@ local config = {
   root_dir = root_dir,
   init_options = {
     workspaceFolders = ws_folders_jdtls,
+    bundles = {
+      vim.fn.glob(path_to_java_dap .. "com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.42.0.jar"
+        , 1),
+    },
     -- extendedClientCapabilities = {
     --   classFileContentsSupport = true
     -- }

@@ -31,6 +31,12 @@ source "$HOME/.cargo/env"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+function proxyssh {
+    # The first argument is the 'stepping stone',
+    # the second is the target to ssh into
+    ssh -o proxyCommand="ssh -W %h:%p $1" $2
+}
+
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
   if [[ $#BUFFER -eq 0 ]]; then

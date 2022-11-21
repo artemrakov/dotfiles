@@ -38,10 +38,7 @@ M.setup = function()
     }
   end
 
-  lspconfig.barium.setup {
-    on_attach = general_on_attach,
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
-  }
+  lspconfig.barium.setup {}
 end
 
 return M
