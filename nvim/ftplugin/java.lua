@@ -53,7 +53,7 @@ local config = {
     workspaceFolders = ws_folders_jdtls,
     bundles = {
       vim.fn.glob("/Users/arakov/Developer/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.42.0.jar", 1)
-    }
+    },
     -- extendedClientCapabilities = {
     --   classFileContentsSupport = true
     -- }

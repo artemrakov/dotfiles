@@ -80,9 +80,9 @@ bind("n", "<leader>sg", "<cmd>lua require('telescope.builtin').live_grep()<cr>",
 bind("n", "<leader>sd", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", silent)
 bind("n", "<leader>sc", "<cmd>lua require('telescope.builtin').git_commits()<cr>", silent)
 bind("n", "<leader>sr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", silent)
-bind("n", "<leader>so", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", silent)
 bind("n", "<leader>sa", "<cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>", silent)
-bind("n", "<leader>sh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", silent)
+bind("n", "<leader>sh", "<cmd>lua require('telescope.builtin').search_history()<cr>", silent)
+bind("n", "<leader>so", "<cmd>lua require('telescope.builtin').resume()<cr>", silent)
 
 bind('n', '<leader><leader>', ':NvimTreeToggle<CR>')
 bind('n', '<C-n>', ':NvimTreeFindFile<CR>')

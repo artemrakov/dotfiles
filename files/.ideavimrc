@@ -1,0 +1,61 @@
+set number relativenumber
+" set ideajoin
+set surround
+set easymotion
+set vim-paragraph-motion
+set textobj-indent
+set highlightedyank
+set commentary
+set NERDTree
+set argtextobjk
+
+set clipboard=unnamedplus
+set ignorecase
+
+let mapleader = "\<Space>"
+let maplocalleader = ","
+
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+" Edit .vimrc
+map <leader>vl :vsp $MYVIMRC<CR>
+map <leader>vr :source $MYVIMRC<CR>
+
+nmap <silent> // :nohlsearch<CR>
+
+map <Leader> <Plug>(easymotion-prefix)
+
+nnoremap <leader><leader> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
+
+map S <Plug>(easymotion-s)
+map s <Plug>(easymotion-f)
+
+""" Editing and Reloading the Config
+set clipboard+=ideaput
+
+nnoremap <leader>f :action ReformatCode<CR>
+
+" nnoremap <leader>o :action OptimizeImports<CR>nnoremap <c-r> :action RecentFiles<CR>
+" nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+" nnoremap ge :action GotoNextError<CR>
+" nnoremap gE :action GotoPreviousError<CR>nnoremap <leader>s :write<CR>""" Searching and Source Code Navigation
+" nnoremap <c-a> :action GotoAction<CR>
+" nnoremap <c-f> :action GotoFile<CR>
+nnoremap <leader>u :action FindUsages<CR>
+
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap gf :action GotoDeclaration<CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>go :action Forward<CR>
+nnoremap <leader>g; :action JumpToLastChange<CR>
+
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dr :action ActivateDebugToolWindow<CR>
+
+
+nnoremap <leader>sg :action SearchEverywhere<CR>
