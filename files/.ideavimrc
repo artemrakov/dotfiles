@@ -44,15 +44,18 @@ nnoremap <leader>f :action ReformatCode<CR>
 nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
 " nnoremap ge :action GotoNextError<CR>
 " nnoremap gE :action GotoPreviousError<CR>nnoremap <leader>s :write<CR>""" Searching and Source Code Navigation
-" nnoremap <c-a> :action GotoAction<CR>
 " nnoremap <c-f> :action GotoFile<CR>
 nnoremap <leader>u :action FindUsages<CR>
 
 nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap gf :action GotoDeclaration<CR>
 nnoremap <leader>b :action Back<CR>
-nnoremap <leader>go :action Forward<CR>
+nnoremap <c-i> :action Forward<CR>
+nnoremap <c-o> :action Back<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
 nnoremap <leader>g; :action JumpToLastChange<CR>
+nnoremap <leader>g, :action JumpToNextChange<CR>
 
 nnoremap <leader>db :action ToggleLineBreakpoint<CR>
 nnoremap <leader>dr :action ActivateDebugToolWindow<CR>
