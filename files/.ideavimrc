@@ -57,8 +57,19 @@ nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <leader>g; :action JumpToLastChange<CR>
 nnoremap <leader>g, :action JumpToNextChange<CR>
 
+nnoremap <leader>e :action ShowErrorDescription<CR>
+
 nnoremap <leader>db :action ToggleLineBreakpoint<CR>
 nnoremap <leader>dr :action ActivateDebugToolWindow<CR>
 
+nnoremap <leader>tt :action Run<CR>
 
-nnoremap <leader>sg :action SearchEverywhere<CR>
+nnoremap <leader>gt :action GotoTest<CR>
+nnoremap <leader>tn :action RunClass<CR>
+nnoremap <leader>tr :action Rerun<CR>
+nnoremap <leader>tf :action RerunFailedTests<CR>
+
+nnoremap <leader>y :action PasteMultiple<CR>
+
+nnoremap <leader>sf :action SearchEverywhere<CR>
+nnoremap <leader>sg :action FindInPath<CR>

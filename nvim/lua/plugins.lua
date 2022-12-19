@@ -90,7 +90,6 @@ return require('packer').startup({
     use 'tpope/vim-unimpaired'
     use 'ntpeters/vim-better-whitespace'
     use 'wincent/replay'
-    use 'folke/tokyonight.nvim'
 
     use 'dyng/ctrlsf.vim'
     use { 'rktjmp/lush.nvim' }
@@ -254,6 +253,7 @@ return require('packer').startup({
         require('leap').add_default_mappings()
       end
     }
+    use 'ThePrimeagen/vim-be-good'
 
 
     require('plugins.specific').run(use)

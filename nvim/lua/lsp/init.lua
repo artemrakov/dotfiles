@@ -8,7 +8,8 @@ M.servers = {
   'sumneko_lua',
   'jsonls',
   'elixirls',
-  'rust_analyzer'
+  'rust_analyzer',
+  'pyright',
 }
 
 M.setup = function()
