@@ -26,12 +26,6 @@ return require('packer').startup({
     --   requires = 'nvim-lua/plenary.nvim'
     -- }
 
-    -- use({
-    --   "arakov@git.amazon.com:pkg/NinjaHooks",
-    --   branch = "mainline",
-    --   cmd = vim.opt.rtp:append(vim.fn.stdpath('data')..'/site/pack/packer/start/NinjaHooks/configuration/vim/amazon/brazil-config'),
-    -- })
-
     use 'tpope/vim-projectionist'
     use { 'tpope/vim-sensible' }
     use({
