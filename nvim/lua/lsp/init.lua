@@ -5,7 +5,7 @@ local M = {}
 M.servers = {
   'tsserver',
   -- 'solargraph',
-  'sumneko_lua',
+  'lua_ls',
   'jsonls',
   'elixirls',
   'rust_analyzer',

@@ -37,6 +37,26 @@ function proxyssh {
     ssh -o proxyCommand="ssh -W %h:%p $1" $2
 }
 
+function dmskey () {
+    # The first argument the key
+    # the second is the region, iad, dub, pdx (default iad)
+    AWS_PAGER=""
+    REGION="${2:-iad}"
+    if [ $REGION = "dub" ]; then
+        ACCOUNT="389629145810"
+        AWS_REGION="eu-west-1"
+    elif [ $REGION = "pdx" ]; then
+        ACCOUNT="681855990469"
+        AWS_REGION="us-west-2"
+    else
+        ACCOUNT="917838938311"
+        AWS_REGION="us-east-1"
+    fi
+    echo "Querying account ${ACCOUNT} in aws region ${AWS_REGION} for key ${1}"
+    ada credentials update --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --account=$ACCOUNT --profile=dms --once
+    aws dynamodb get-item --profile dms --region $AWS_REGION --table-name transformation-scripts --key "{\"key\": {\"S\": \"$1\"}}" | jq  '.Item.value.B' | tr -d '"' | base64 --decode | xmllint --format -
+}
+
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
   if [[ $#BUFFER -eq 0 ]]; then

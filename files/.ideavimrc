@@ -52,10 +52,14 @@ nnoremap gf :action GotoDeclaration<CR>
 nnoremap <leader>b :action Back<CR>
 nnoremap <c-i> :action Forward<CR>
 nnoremap <c-o> :action Back<CR>
+
 nnoremap <leader>ca :action ShowIntentionActions<CR>
 
-nnoremap <leader>g; :action JumpToLastChange<CR>
-nnoremap <leader>g, :action JumpToNextChange<CR>
+
+nnoremap <leader>rn :action RenameElement<CR>
+
+nnoremap g; :action JumpToLastChange<CR>
+nnoremap g, :action JumpToNextChange<CR>
 
 nnoremap <leader>e :action ShowErrorDescription<CR>
 
@@ -73,3 +77,5 @@ nnoremap <leader>y :action PasteMultiple<CR>
 
 nnoremap <leader>sf :action SearchEverywhere<CR>
 nnoremap <leader>sg :action FindInPath<CR>
+
+nnoremap <leader>rn :action RenameElement<CR>

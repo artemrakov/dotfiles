@@ -6,7 +6,6 @@ alias r="rails"
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
-alias odin="ssh -fNL 2009:127.0.0.1:2009 dev-dsk-litn-cdd-2c-2433841d.us-west-2.amazon.com"
 alias bws='brazil ws sync'
 alias bb="brazil-build"
 alias bbb="brazil-build build"
@@ -21,3 +20,8 @@ alias h="cd ~/"
 alias a="cd /apollo/env/"
 alias k="kinit -f"
 alias m="mwinit"
+alias attach="ssh ${USER}.aka.corp.amazon.com -t '/usr/bin/tmux -u -CC attach'"
+alias mountws="sshfs ${USER}.aka.corp.amazon.com:/local/home/${USER}/workplace/ ${HOME}/dsk-workspace/ -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=dsk-workspace -ossh_command=\"ssh -F /dev/null\""
+alias sshdebug="ssh -N -L 5050:localhost:5050 -L 5051:localhost:5051 -L 1055:localhost:1055 ${USER}.aka.corp.amazon.com"
+alias odin="ssh -f -N -L 2009:localhost:2009 ${USER}.aka.corp.amazon.com"
+alias umountws="umount ${HOME}/dsk-workspace"
