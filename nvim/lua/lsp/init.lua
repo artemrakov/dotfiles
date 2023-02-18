@@ -8,7 +8,7 @@ M.servers = {
   'lua_ls',
   'jsonls',
   'elixirls',
-  'rust_analyzer',
+  -- 'rust_analyzer',
   'pyright',
 }
 

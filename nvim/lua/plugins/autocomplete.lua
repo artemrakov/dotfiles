@@ -81,12 +81,6 @@ function M.run(use)
     end
   }
 
-  use {
-    'mfussenegger/nvim-dap',
-    config = function()
-      vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
-    end
-  }
   use 'rcarriga/cmp-dap'
 
   use {

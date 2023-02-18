@@ -33,6 +33,20 @@ function M.run(use)
   }
 
 
+  use {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      local rt = require("rust-tools")
+      local general_on_attach = require('lsp.on_attach')
+      local serverConfig = require('lsp.servers.rust_analyzer')(general_on_attach)
+
+      rt.setup({
+        server = {
+          on_attach = serverConfig.on_attach
+        },
+      })
+    end
+  }
 end
 
 return M

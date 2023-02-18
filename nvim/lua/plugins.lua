@@ -1,5 +1,4 @@
 return require('packer').startup({
-
   function(use)
     use { 'wbthomason/packer.nvim' }
 
@@ -46,7 +45,8 @@ return require('packer').startup({
     -- }
     use {
       'nvim-lualine/lualine.nvim',
-      config = function() require('lualine').setup({
+      config = function()
+        require('lualine').setup({
           options = {
             icons_enabled = false,
             -- theme = 'gruvbox-material',
@@ -62,7 +62,6 @@ return require('packer').startup({
             lualine_y = { 'progress' },
             lualine_z = { 'location' }
           },
-
         })
       end
     }
@@ -94,7 +93,9 @@ return require('packer').startup({
     use {
       'numToStr/Comment.nvim',
       config = function()
-        require('Comment').setup()
+        require('Comment').setup({
+          toggler = { line = 'gcc' }, opleader = { line = 'gc' },
+        })
       end
     }
 
@@ -142,7 +143,6 @@ return require('packer').startup({
             topdelete = { hl = 'GitGutterDelete', text = '‾' },
             changedelete = { hl = 'GitGutterChange', text = '~' },
           },
-
           on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
 
@@ -191,7 +191,8 @@ return require('packer').startup({
       requires = {
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
-      config = function() require('nvim-tree').setup({
+      config = function()
+        require('nvim-tree').setup({
           update_cwd = true,
           update_focused_file = {
             enable = true,
@@ -251,6 +252,24 @@ return require('packer').startup({
 
 
     require('plugins.specific').run(use)
+
+    use {
+      'mfussenegger/nvim-dap',
+      config = require('plugins.nvim-dap')
+    }
+
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {
+      'theHamsta/nvim-dap-virtual-text',
+      requires = {
+        'mfussenegger/nvim-dap',
+      },
+      config = function()
+        require("nvim-dap-virtual-text").setup()
+      end
+    }
+
+
   end,
   config = {
     enable = true,
