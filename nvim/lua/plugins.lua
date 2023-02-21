@@ -260,10 +260,13 @@ return require('packer').startup({
       end
     }
     use 'ThePrimeagen/vim-be-good'
+    use {
+      'github/copilot.vim',
+      config = require('plugins.copilot')
+    }
 
 
     require('plugins.specific').run(use)
-
   end,
   config = {
     enable = true,
