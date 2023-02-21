@@ -219,6 +219,17 @@ return require('packer').startup({
       end
     }
 
+    -- use {
+    --   'jay-babu/mason-nvim-dap.nvim',
+    --   config = function()
+    --     require("mason-nvim-dap").setup({
+    --       automatic_setup = true,
+    --     })
+    --
+    --     require 'mason-nvim-dap'.setup_handlers {}
+    --   end
+    -- }
+
     -- use { "WhoIsSethDaniel/mason-tool-installer.nvim", requires = { "williamboman/mason.nvim" },
     --   config = function()
     --     local tools = require('lsp.servers.nullls')
@@ -252,23 +263,6 @@ return require('packer').startup({
 
 
     require('plugins.specific').run(use)
-
-    use {
-      'mfussenegger/nvim-dap',
-      config = require('plugins.nvim-dap')
-    }
-
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use {
-      'theHamsta/nvim-dap-virtual-text',
-      requires = {
-        'mfussenegger/nvim-dap',
-      },
-      config = function()
-        require("nvim-dap-virtual-text").setup()
-      end
-    }
-
 
   end,
   config = {

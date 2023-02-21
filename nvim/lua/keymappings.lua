@@ -105,18 +105,6 @@ bind("n", "<leader>np", ":sp ~/Dropbox/work/shogun/project-notes.md<cr>", silent
 bind("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", silent)
 bind("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", silent)
 
--- setup debug
-bind('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
-bind('n', '<leader>dB', ':lua require"dap".set_breakpoint(vim.fn.input("Condition: "))<CR>')
-bind('n', '<leader>dl', ':lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log: "))<CR>')
-bind('n', '<leader>dr', ':lua require"dap".repl.open()<CR>')
-
--- move in debug
-bind('n', '<leader>dc', ':lua require"dap".continue()<CR>')
-bind('n', '<leader>do', ':lua require"dap".step_over()<CR>')
-bind('n', '<leader>di', ':lua require"dap".step_into()<CR>')
-bind('n', '<leader>dO', ':lua require"dap".step_out()<CR>')
-
 -- Comment Box
 -- bind("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", opts)
 -- bind("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", opts)
