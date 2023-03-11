@@ -6,6 +6,7 @@ M.servers = {
   'tsserver',
   -- 'solargraph',
   'lua_ls',
+  'ltex',
   'jsonls',
   'elixirls',
   -- 'rust_analyzer',
