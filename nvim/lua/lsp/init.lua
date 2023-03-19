@@ -4,7 +4,7 @@ local M = {}
 
 M.servers = {
   'tsserver',
-  -- 'solargraph',
+  'solargraph',
   'lua_ls',
   'ltex',
   'jsonls',

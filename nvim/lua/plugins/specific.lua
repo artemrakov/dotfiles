@@ -7,7 +7,7 @@ function M.run(use)
   })
 
   use 'tpope/vim-rails'
-  --     use 'slim-template/vim-slim'
+  use 'slim-template/vim-slim'
   -- use { 'mfussenegger/nvim-jdtls' }
 
   -- use 'tpope/vim-dispatch'

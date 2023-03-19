@@ -37,9 +37,6 @@ return function(client, bufnr)
     map('n', '\'D', '<cmd>TroubleToggle<CR>', options)
 
     map('n', '<leader>f', function()
-        if vim.bo.filetype == 'typescript' then
-            require 'nvim-lsp-ts-utils'.organize_imports_sync()
-        end
         vim.lsp.buf.format({ async = true })
     end, options)
 end
