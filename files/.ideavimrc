@@ -31,8 +31,8 @@ map <Leader> <Plug>(easymotion-prefix)
 nnoremap <leader><leader> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>
 
-map S <Plug>(easymotion-s)
-map s <Plug>(easymotion-f)
+" map S <Plug>(easymotion-s)
+" map s <Plug>(easymotion-f)
 
 """ Editing and Reloading the Config
 set clipboard+=ideaput
