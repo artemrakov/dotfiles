@@ -7,6 +7,7 @@ return require('packer').startup({
     use { 'nathom/filetype.nvim' }
     use { 'nvim-lua/plenary.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
+    use { 'folke/tokyonight.nvim'}
 
     -- use { 'LudoPinelli/comment-box.nvim' }
     -- use {

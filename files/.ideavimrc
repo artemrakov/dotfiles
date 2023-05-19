@@ -1,7 +1,7 @@
 set number relativenumber
 " set ideajoin
 set surround
-set easymotion
+" set easymotion
 set vim-paragraph-motion
 set textobj-indent
 set highlightedyank

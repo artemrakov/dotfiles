@@ -3,5 +3,6 @@
 --    return
 -- end
 -- vim.g.tokyonight_style = "night"
--- vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[colorscheme jellybeans-nvim]]
+-- vim.cmd[[colorscheme jellybeans-nvim]]
+vim.cmd[[colorscheme tokyonight-night]]
+
