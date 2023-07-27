@@ -4,7 +4,6 @@ return require('packer').startup({
 
     -- speeding up
     use { 'lewis6991/impatient.nvim' }
-    use { 'nathom/filetype.nvim' }
     use { 'nvim-lua/plenary.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'folke/tokyonight.nvim'}

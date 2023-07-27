@@ -1,4 +1,4 @@
-set number relativenumber
+" set number relativenumber
 " set ideajoin
 set surround
 " set easymotion
@@ -25,8 +25,6 @@ map <leader>vl :vsp $MYVIMRC<CR>
 map <leader>vr :source $MYVIMRC<CR>
 
 nmap <silent> // :nohlsearch<CR>
-
-map <Leader> <Plug>(easymotion-prefix)
 
 nnoremap <leader><leader> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>

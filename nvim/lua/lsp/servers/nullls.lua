@@ -1,7 +1,7 @@
 local M = {}
 
 M.list = {
-  'eslint_d',
+  -- 'eslint_d',
   'prettierd',
   'cspell',
   -- 'proselint',
@@ -21,7 +21,7 @@ M.setup = function()
       formatting.prettierd,
       formatting.fixjson,
 
-      diagnostics.eslint_d.with({ timeout = 10000 }),
+      -- diagnostics.eslint_d.with({ timeout = 10000 }),
       diagnostics.yamllint,
       diagnostics.cfn_lint,
       -- diagnostics.markdownlint,
@@ -33,7 +33,7 @@ M.setup = function()
         end
       }),
 
-      code_actions.eslint_d,
+      -- code_actions.eslint_d,
     },
     on_attach = general_on_attach
   })
