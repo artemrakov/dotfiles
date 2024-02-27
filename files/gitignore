@@ -10,3 +10,5 @@ node_modules/
 .projections.json
 .settings/
 .classpath
+rust-toolchain.toml
+/build

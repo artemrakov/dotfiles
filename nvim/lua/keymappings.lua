@@ -95,11 +95,10 @@ bind("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 bind("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
 -- Dropbox
-bind("n", "<leader>nd", ":e ~/Dropbox<cr>", silent)
-bind("n", "<leader>nj", ":sp ~/Dropbox/notes/debugging_journal.txt<cr>", silent)
-bind("n", "<leader>nc", ":sp ~/Dropbox/notes/coding-notes.txt<cr>", silent)
-bind("n", "<leader>nn", ":sp ~/Dropbox/notes/programming_notes.txt<cr>", silent)
-bind("n", "<leader>np", ":sp ~/Dropbox/work/shogun/project-notes.md<cr>", silent)
+bind("n", "<leader>nd", ":e ~/code/notes<cr>", silent)
+bind("n", "<leader>nj", ":sp ~/code/notes/debugging_journal.txt<cr>", silent)
+bind("n", "<leader>nc", ":sp ~/code/notes/coding-notes.txt<cr>", silent)
+bind("n", "<leader>nn", ":sp ~/code/notes/programming_notes.txt<cr>", silent)
 
 bind("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", silent)
 bind("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", silent)

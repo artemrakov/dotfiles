@@ -64,10 +64,10 @@ function M.run(use)
         highlight = {
           enable = true, -- false will disable the whole extension
         },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
+        -- context_commentstring = {
+        --   enable = true,
+        --   enable_autocmd = false,
+        -- },
         endwise = {
           enable = true,
         },

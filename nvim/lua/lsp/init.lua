@@ -9,6 +9,7 @@ M.servers = {
   'ltex',
   'jsonls',
   'elixirls',
+  'clangd',
   -- 'rust_analyzer',
   'pyright',
 }

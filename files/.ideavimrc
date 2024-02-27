@@ -1,4 +1,4 @@
-" set number relativenumber
+set number relativenumber
 " set ideajoin
 set surround
 " set easymotion
