@@ -6,7 +6,8 @@ return require('packer').startup({
     use { 'lewis6991/impatient.nvim' }
     use { 'nvim-lua/plenary.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'folke/tokyonight.nvim'}
+    use { 'folke/tokyonight.nvim' }
+    use { "nvim-neotest/nvim-nio" }
 
     -- use { 'LudoPinelli/comment-box.nvim' }
     -- use {
